@@ -172,6 +172,7 @@ function putFileWithProgress(path, base64Content, message, token, onProgress) {
     xhr.setRequestHeader("Accept", "application/vnd.github+json");
     xhr.setRequestHeader("X-GitHub-Api-Version", "2022-11-28");
     xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.timeout = 120000;
     xhr.upload.addEventListener("progress", (e) => {
       if (e.lengthComputable) onProgress((e.loaded / e.total) * 100);
     });
@@ -190,8 +191,27 @@ function putFileWithProgress(path, base64Content, message, token, onProgress) {
       }
     };
     xhr.onerror = () => reject(new Error("فشل رفع ملف APK — تحقق من الاتصال."));
+    xhr.ontimeout = () => reject(new Error("انتهت مهلة الرفع — الاتصال بطيء كتير."));
     xhr.send(JSON.stringify({ message, content: base64Content }));
   });
+}
+
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+// Large uploads over an unstable (often mobile) connection can drop
+// mid-transfer; retry a few times with backoff instead of failing outright.
+async function withRetry(attemptFn, retries, onRetry) {
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      return await attemptFn();
+    } catch (err) {
+      if (attempt === retries) throw err;
+      onRetry(attempt + 1, retries);
+      await delay(2000 * 2 ** attempt);
+    }
+  }
 }
 
 uploadForm.addEventListener("submit", async (e) => {
@@ -223,13 +243,16 @@ uploadForm.addEventListener("submit", async (e) => {
     const path = `releases/${Date.now()}-${safeName}`;
 
     showUploadStatus("جارٍ رفع ملف APK إلى GitHub...", null);
-    const uploadResult = await putFileWithProgress(
-      path,
-      base64,
-      `Publish release ${version}`,
-      token,
-      (pct) => {
-        progressBar.style.width = `${pct}%`;
+    const uploadResult = await withRetry(
+      () => {
+        progressBar.style.width = "0%";
+        return putFileWithProgress(path, base64, `Publish release ${version}`, token, (pct) => {
+          progressBar.style.width = `${pct}%`;
+        });
+      },
+      3,
+      (attempt, total) => {
+        showUploadStatus(`انقطع الاتصال أثناء الرفع، عم أعيد المحاولة (${attempt}/${total})...`, null);
       }
     );
 
@@ -245,7 +268,9 @@ uploadForm.addEventListener("submit", async (e) => {
       path,
       blobSha: uploadResult.content.sha,
     });
-    await writeManifest(releases, sha, `Publish release ${version}`);
+    await withRetry(() => writeManifest(releases, sha, `Publish release ${version}`), 2, () => {
+      showUploadStatus("جارٍ إعادة محاولة تحديث قائمة الإصدارات...", null);
+    });
 
     showUploadStatus("تم نشر الإصدار بنجاح.", true);
     uploadForm.reset();
