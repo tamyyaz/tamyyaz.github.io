@@ -55,9 +55,27 @@
       <div class="card">
         <h1>نشر إصدار جديد</h1>
         <form id="upload-form">
-          <label>ملف APK
-            <input type="file" id="apk-file" accept=".apk" required />
-          </label>
+          <div class="mode-switch" role="tablist">
+            <button type="button" class="mode-btn active" data-mode="file" id="mode-file-btn">رفع ملف</button>
+            <button type="button" class="mode-btn" data-mode="link" id="mode-link-btn">رابط مباشر</button>
+          </div>
+
+          <div id="file-mode-fields">
+            <label>ملف APK
+              <input type="file" id="apk-file" accept=".apk" />
+            </label>
+          </div>
+
+          <div id="link-mode-fields" hidden>
+            <label>رابط تنزيل مباشر للـ APK
+              <input type="url" id="apk-url" placeholder="https://github.com/.../releases/download/..." />
+            </label>
+            <label>حجم الملف بالميغابايت (اختياري)
+              <input type="number" id="apk-size-mb" step="0.1" min="0" placeholder="مثال: 29.5" />
+            </label>
+            <p class="help-text">استخدمي هيك لو الملف مرفوع بمكان تاني (مثلاً GitHub Releases) وبدك بس تربطي رابطه هون، بدل ما ترفعيه من هالصفحة مباشرة.</p>
+          </div>
+
           <label>رقم الإصدار
             <input type="text" id="version-input" placeholder="مثال: 1.2.0" required />
           </label>

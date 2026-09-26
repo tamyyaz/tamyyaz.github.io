@@ -20,9 +20,28 @@ const uploadProgress = document.getElementById("upload-progress");
 const progressBar = uploadProgress.querySelector(".progress-bar");
 const uploadStatus = document.getElementById("upload-status");
 const releaseTbody = document.querySelector("#admin-release-list tbody");
+const modeFileBtn = document.getElementById("mode-file-btn");
+const modeLinkBtn = document.getElementById("mode-link-btn");
+const fileModeFields = document.getElementById("file-mode-fields");
+const linkModeFields = document.getElementById("link-mode-fields");
+const apkUrlInput = document.getElementById("apk-url");
+const apkSizeMbInput = document.getElementById("apk-size-mb");
 
 repoHint.textContent = repoFullName;
 repoLabel.textContent = repoFullName;
+
+let uploadMode = "file";
+
+function setUploadMode(mode) {
+  uploadMode = mode;
+  modeFileBtn.classList.toggle("active", mode === "file");
+  modeLinkBtn.classList.toggle("active", mode === "link");
+  fileModeFields.hidden = mode !== "file";
+  linkModeFields.hidden = mode !== "link";
+}
+
+modeFileBtn.addEventListener("click", () => setUploadMode("file"));
+modeLinkBtn.addEventListener("click", () => setUploadMode("link"));
 
 function getToken() {
   return sessionStorage.getItem(TOKEN_KEY) || localStorage.getItem(TOKEN_KEY);
@@ -214,67 +233,110 @@ async function withRetry(attemptFn, retries, onRetry) {
   }
 }
 
-uploadForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const fileInput = document.getElementById("apk-file");
-  const version = document.getElementById("version-input").value.trim();
-  const notes = document.getElementById("notes-input").value.trim();
-  const file = fileInput.files[0];
-  const token = getToken();
-
-  if (!file) return;
+async function publishFromFile(file, version, notes, token) {
   if (!file.name.toLowerCase().endsWith(".apk")) {
     showUploadStatus("الملف يجب أن يكون بصيغة APK.", false);
-    return;
+    return false;
   }
   if (file.size > MAX_FILE_BYTES) {
     showUploadStatus("حجم الملف أكبر من 100 ميغابايت (حد GitHub لهذا النوع من الرفع).", false);
-    return;
+    return false;
   }
 
-  uploadBtn.disabled = true;
   uploadProgress.hidden = false;
   progressBar.style.width = "0%";
   showUploadStatus("جارٍ تجهيز الملف...", null);
 
+  const base64 = await fileToBase64(file);
+  const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+  const path = `releases/${Date.now()}-${safeName}`;
+
+  showUploadStatus("جارٍ رفع ملف APK إلى GitHub...", null);
+  const uploadResult = await withRetry(
+    () => {
+      progressBar.style.width = "0%";
+      return putFileWithProgress(path, base64, `Publish release ${version}`, token, (pct) => {
+        progressBar.style.width = `${pct}%`;
+      });
+    },
+    3,
+    (attempt, total) => {
+      showUploadStatus(`انقطع الاتصال أثناء الرفع، عم أعيد المحاولة (${attempt}/${total})...`, null);
+    }
+  );
+
+  await publishManifestEntry(token, {
+    version,
+    notes,
+    fileName: file.name,
+    sizeBytes: file.size,
+    uploadedAt: new Date().toISOString(),
+    downloadUrl: path,
+    path,
+    blobSha: uploadResult.content.sha,
+  });
+  return true;
+}
+
+async function publishFromLink(url, sizeMb, version, notes, token) {
+  if (!url) {
+    showUploadStatus("لازم تحطي رابط تنزيل مباشر للملف.", false);
+    return false;
+  }
+
+  showUploadStatus("جارٍ تحديث قائمة الإصدارات...", null);
+  await publishManifestEntry(token, {
+    version,
+    notes,
+    fileName: url.split("/").pop() || "app.apk",
+    sizeBytes: sizeMb ? Math.round(parseFloat(sizeMb) * 1024 * 1024) : undefined,
+    uploadedAt: new Date().toISOString(),
+    downloadUrl: url,
+    path: null,
+    blobSha: null,
+  });
+  return true;
+}
+
+async function publishManifestEntry(token, entry) {
+  showUploadStatus("جارٍ تحديث قائمة الإصدارات...", null);
+  const { sha, releases } = await fetchManifest();
+  releases.unshift(entry);
+  await withRetry(() => writeManifest(releases, sha, `Publish release ${entry.version}`), 2, () => {
+    showUploadStatus("جارٍ إعادة محاولة تحديث قائمة الإصدارات...", null);
+  });
+}
+
+uploadForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const version = document.getElementById("version-input").value.trim();
+  const notes = document.getElementById("notes-input").value.trim();
+  const token = getToken();
+
+  uploadBtn.disabled = true;
+
   try {
-    const base64 = await fileToBase64(file);
-    const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
-    const path = `releases/${Date.now()}-${safeName}`;
-
-    showUploadStatus("جارٍ رفع ملف APK إلى GitHub...", null);
-    const uploadResult = await withRetry(
-      () => {
-        progressBar.style.width = "0%";
-        return putFileWithProgress(path, base64, `Publish release ${version}`, token, (pct) => {
-          progressBar.style.width = `${pct}%`;
-        });
-      },
-      3,
-      (attempt, total) => {
-        showUploadStatus(`انقطع الاتصال أثناء الرفع، عم أعيد المحاولة (${attempt}/${total})...`, null);
+    let published;
+    if (uploadMode === "file") {
+      const file = document.getElementById("apk-file").files[0];
+      if (!file) {
+        uploadBtn.disabled = false;
+        return;
       }
-    );
+      published = await publishFromFile(file, version, notes, token);
+    } else {
+      published = await publishFromLink(apkUrlInput.value.trim(), apkSizeMbInput.value, version, notes, token);
+    }
 
-    showUploadStatus("جارٍ تحديث قائمة الإصدارات...", null);
-    const { sha, releases } = await fetchManifest();
-    releases.unshift({
-      version,
-      notes,
-      fileName: file.name,
-      sizeBytes: file.size,
-      uploadedAt: new Date().toISOString(),
-      downloadUrl: path,
-      path,
-      blobSha: uploadResult.content.sha,
-    });
-    await withRetry(() => writeManifest(releases, sha, `Publish release ${version}`), 2, () => {
-      showUploadStatus("جارٍ إعادة محاولة تحديث قائمة الإصدارات...", null);
-    });
+    if (!published) {
+      uploadBtn.disabled = false;
+      return;
+    }
 
     showUploadStatus("تم نشر الإصدار بنجاح.", true);
     uploadForm.reset();
     uploadProgress.hidden = true;
+    setUploadMode("file");
     loadReleases();
   } catch (err) {
     console.error(err);
