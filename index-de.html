@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tamyyaz — App herunterladen</title>
+  <meta name="description" content="Lade die neueste Version der Tamyyaz-App direkt herunter, mit einem vollständigen Archiv früherer Versionen." />
+  <meta name="theme-color" content="#0f0b1a" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+  <link rel="alternate" hreflang="ar" href="index.html" />
+  <link rel="alternate" hreflang="en" href="index-en.html" />
+  <link rel="alternate" hreflang="fr" href="index-fr.html" />
+  <link rel="alternate" hreflang="de" href="index-de.html" />
+  <link rel="alternate" hreflang="tr" href="index-tr.html" />
+  <link rel="alternate" hreflang="x-default" href="index.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="index-de.html" class="logo">
+        <img src="assets/logo.png" alt="" class="logo-mark-img" />
+        Tamyyaz <span class="logo-en">تميّز</span>
+      </a>
+      <nav class="site-nav">
+        <a href="index-de.html" class="nav-link active" aria-current="page">Herunterladen</a>
+        <a href="privacy-de.html" class="nav-link">Datenschutz</a>
+        <span class="lang-group">
+          <a href="index.html" class="nav-link lang-pill">AR</a>
+          <a href="index-en.html" class="nav-link lang-pill">EN</a>
+          <a href="index-fr.html" class="nav-link lang-pill">FR</a>
+          <a href="index-de.html" class="nav-link lang-pill active" aria-current="true">DE</a>
+          <a href="index-tr.html" class="nav-link lang-pill">TR</a>
+        </span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <p class="tagline">Eine Lern- und Fokus-App für Schüler und Studierende weltweit, von der 7. Klasse bis zur Universität — Zusammenfassungen, Fragen und Übersetzung mit KI-Unterstützung.</p>
+    <div class="feature-row">
+      <span class="feature-chip">Lernzeit-Tracking</span>
+      <span class="feature-chip">KI-Zusammenfassungen &amp; Fragen</span>
+      <span class="feature-chip">Sofortübersetzung</span>
+      <span class="feature-chip">Abzeichen &amp; Erfolge</span>
+    </div>
+
+    <section id="loading-state" class="state-msg">
+      <div class="spinner" aria-hidden="true"></div>
+      <p>Wird geladen...</p>
+    </section>
+    <section id="empty-state" class="state-msg" hidden>
+      <svg class="state-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M3 8l2-4h14l2 4M3 8v10a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V8M3 8h18M9 12h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p>Noch keine Version veröffentlicht.</p>
+    </section>
+    <section id="error-state" class="state-msg error" hidden>
+      <svg class="state-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M12 8v5M12 16h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <p>Versionen konnten nicht geladen werden. Bitte Seite neu laden.</p>
+    </section>
+
+    <section id="latest-release" class="hero-card" hidden>
+      <img src="assets/logo.png" alt="Tamyyaz" class="hero-logo" />
+      <span class="badge">Neueste Version</span>
+      <h1 class="version"></h1>
+      <p class="meta"><span class="date"></span> · <span class="size"></span></p>
+      <p class="notes"></p>
+      <a class="download-btn" href="#">APK herunterladen</a>
+      <p class="hint">Dein Gerät fragt dich möglicherweise einmalig, ob du Installationen aus unbekannten Quellen erlauben möchtest.</p>
+    </section>
+
+    <section id="release-list-section" class="releases-section" hidden>
+      <h2>Frühere Versionen</h2>
+      <div class="table-scroll">
+        <table id="release-list">
+          <thead>
+            <tr>
+              <th>Version</th>
+              <th>Datum</th>
+              <th>Größe</th>
+              <th>Hinweise</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2026 Tamyyaz — eine Lern- und Fokus-App für Schüler und Studierende weltweit.</p>
+      <div class="footer-links">
+        <a href="index-de.html">Herunterladen</a>
+        <a href="privacy-de.html">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

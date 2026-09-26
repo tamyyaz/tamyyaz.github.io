@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gizlilik Politikası — Tamyyaz (تميّز)</title>
+  <meta name="description" content="Tamyyaz uygulamasının gizlilik politikası: hangi verileri topluyoruz, nasıl kullanıyoruz ve kimler görebilir." />
+  <meta name="theme-color" content="#0f0b1a" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+  <link rel="alternate" hreflang="ar" href="privacy.html" />
+  <link rel="alternate" hreflang="en" href="privacy-en.html" />
+  <link rel="alternate" hreflang="fr" href="privacy-fr.html" />
+  <link rel="alternate" hreflang="de" href="privacy-de.html" />
+  <link rel="alternate" hreflang="tr" href="privacy-tr.html" />
+  <link rel="alternate" hreflang="x-default" href="privacy.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="index-tr.html" class="logo">
+        <img src="assets/logo.png" alt="" class="logo-mark-img" />
+        Tamyyaz <span class="logo-en">تميّز</span>
+      </a>
+      <nav class="site-nav">
+        <a href="index-tr.html" class="nav-link">İndir</a>
+        <a href="privacy-tr.html" class="nav-link active" aria-current="page">Gizlilik Politikası</a>
+        <span class="lang-group">
+          <a href="privacy.html" class="nav-link lang-pill">AR</a>
+          <a href="privacy-en.html" class="nav-link lang-pill">EN</a>
+          <a href="privacy-fr.html" class="nav-link lang-pill">FR</a>
+          <a href="privacy-de.html" class="nav-link lang-pill">DE</a>
+          <a href="privacy-tr.html" class="nav-link lang-pill active" aria-current="true">TR</a>
+        </span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <article class="doc">
+      <h1>Gizlilik Politikası</h1>
+      <p class="doc-updated">Son güncelleme: 26 Eylül 2026</p>
+
+      <div class="doc-note">
+        <p>Bu sayfa, <strong>Tamyyaz</strong> uygulamasının hangi verileri topladığını, bunları nasıl kullandığımızı ve kimlerin görebildiğini açıklar. Bu politika ayrıca <a href="privacy.html">Arapça</a>, <a href="privacy-en.html">İngilizce</a>, <a href="privacy-fr.html">Fransızca</a> ve <a href="privacy-de.html">Almanca</a> olarak da mevcuttur. Çeviriler arasında bir çelişki olması durumunda esas alınan sürüm <a href="privacy-en.html">İngilizce sürümdür</a>.</p>
+      </div>
+
+      <nav class="toc" aria-label="Sayfa içeriği">
+        <p>Bu sayfada</p>
+        <ol>
+          <li><a href="#intro">Giriş</a></li>
+          <li><a href="#data">Topladığımız veriler</a></li>
+          <li><a href="#social">Sosyal özellikler ve tartışmalar</a></li>
+          <li><a href="#parents">Veli hesabı ve gözetim</a></li>
+          <li><a href="#ai">Yapay zekâ özellikleri (Gemini)</a></li>
+          <li><a href="#storage">Verilerin nerede saklandığı</a></li>
+          <li><a href="#minors">Reşit olmayanlar ve öğrenciler için gizlilik</a></li>
+          <li><a href="#sharing">Veri paylaşımı — verileri satıyor muyuz?</a></li>
+          <li><a href="#security">Veri güvenliği</a></li>
+          <li><a href="#rights">Verileriniz üzerindeki haklarınız</a></li>
+          <li><a href="#changes">Bu politikadaki değişiklikler</a></li>
+          <li><a href="#contact">Bize ulaşın</a></li>
+        </ol>
+      </nav>
+
+      <section id="intro">
+        <h2><span class="num">1.</span>Giriş</h2>
+        <p>Tamyyaz, dünyanın her yerindeki ortaokul ve üniversite öğrencileri için geliştirilmiş, 7. sınıftan üniversiteye kadar kullanılabilen bir ders çalışma ve odaklanma uygulamasıdır. Çalışma sürenizi düzenlemenize, ilerlemenizi takip etmenize ve ders özeti çıkarma, soru üretme, çeviri gibi yapay zekâ destekli araçları kullanmanıza yardımcı olur.</p>
+        <p>Bu politika, uygulamayı Google Play'den yüklemiş olsanız da resmi web sitemizden doğrudan APK olarak indirmiş olsanız da geçerlidir. Uygulamayı kullanarak, verilerinizin aşağıda açıklandığı şekilde toplanmasını ve kullanılmasını kabul etmiş olursunuz.</p>
+      </section>
+
+      <section id="data">
+        <h2><span class="num">2.</span>Topladığımız veriler</h2>
+        <p>Uygulamayı ve özelliklerini çalıştırmak için aşağıdaki veri türlerini topluyoruz:</p>
+        <ul>
+          <li><strong>Hesap bilgileri:</strong> adınız, bir e-posta adresi veya oturum açma kimliği (çoğu durumda gerçek bir kişisel e-posta yerine okul tarafından verilen bir kimlik) ve bir parola — parolalar Firebase Authentication aracılığıyla tamamen şifrelenir; bunları göremez veya düz metin olarak saklayamayız.</li>
+          <li><strong>Profil bilgileri:</strong> sınıf düzeyi, okul adı, sınıf/şube ve isteğe bağlı bir profil fotoğrafı (tamamen isteğe bağlı — fotoğraf eklemeden de uygulamayı kullanabilirsiniz).</li>
+          <li><strong>Kullanım etkinliği ve akademik ilerleme:</strong> ders çalışma oturumlarının süresi ve zamanlaması, zayıf noktalarınızı takip etmenize yardımcı olacak soru, cevap ve hata geçmişi, uygulama içi "Kristal" bakiyeniz (gerçek parasal değeri olmayan dahili bir motivasyon birimi) ve kazandığınız rozetler/başarımlar.</li>
+        </ul>
+      </section>
+
+      <section id="social">
+        <h2><span class="num">3.</span>Sosyal özellikler ve tartışmalar</h2>
+        <p>Uygulama, diğer öğrencilerle bağlantı kurmanızı sağlayan sosyal özellikler içerir: bir arkadaş listesi, genel bir forum ve derse özel tartışma konuları. Lütfen şunu unutmayın:</p>
+        <ul>
+          <li>Genel forum gönderileri ve ders tartışması mesajları <strong>özel sohbetler değildir</strong> — yayınladığınız bölüme bağlı olarak kendi okulunuzdan/sınıfınızdan ya da daha geniş bir kitleden diğer öğrenciler tarafından okunabilir.</li>
+          <li>Bu alanlarda hassas kişisel bilgileri (telefon numarası, adres, aile bilgileri) paylaşmaktan kaçının.</li>
+          <li>Arkadaş listeniz, uygulamadaki gizlilik ayarlarına bağlı olarak arkadaşlarınızın bazı ders çalışmayla ilgili etkinliklerini veya istatistiklerini (örneğin çalışma süresi) görmenizi sağlayabilir.</li>
+        </ul>
+      </section>
+
+      <section id="parents">
+        <h2><span class="num">4.</span>Veli hesabı ve gözetim</h2>
+        <p>Tamyyaz, bir veli veya vasinin kendi hesabını bir öğrenci hesabıyla ilişkilendirmesine olanak tanır. Bağlantı kurulduktan sonra veli şunları yapabilir:</p>
+        <ul>
+          <li>Öğrencinin ders çalışma istatistiklerini görüntüleme (çalışma süresi, ilerleme, ödevler).</li>
+          <li>Çalışma saatlerinde diğer uygulamaların kullanımını kısıtlayan "Odaklanma Kilidi" (Focus Lock) özelliğini kontrol etme.</li>
+        </ul>
+        <p>Bu bağlantı, velilerin çocuklarının akademik ilerlemesini şeffaf biçimde takip edebilmesi için tasarlanmıştır ve veliye öğrencinin özel mesajlarına veya parolasına erişim sağlamaz.</p>
+      </section>
+
+      <section id="ai">
+        <h2><span class="num">5.</span>Yapay zekâ özellikleri (Gemini)</h2>
+        <p>Uygulamanın yapay zekâ özelliklerini kullandığınızda — örneğin "akıllı öğretmene" bir soru sorduğunuzda, çeviri istediğinizde veya alıştırma soruları oluşturduğunuzda — yazdığınız metin, uygun bir yanıt üretilmesi için Google'ın <strong>Gemini API</strong>'sine gönderilir.</p>
+        <p>Bu, Google'ın bu belirli metin için (yalnızca bu özelliğe gönderdiğiniz metin için, tüm verileriniz için değil) üçüncü taraf bir veri işleyici olarak hareket ettiği anlamına gelir. Bu işleme aynı zamanda <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google'ın Gizlilik Politikası</a>'na tabidir. Bu isteklerde telefon numarası veya adres gibi hassas kişisel bilgilerden kaçınmanızı öneririz.</p>
+      </section>
+
+      <section id="storage">
+        <h2><span class="num">6.</span>Verilerin nerede saklandığı</h2>
+        <p>Verileriniz (hesap, dosyalar, etkinlik geçmişi) şu sağlayıcılara ait bulut altyapısında saklanır:</p>
+        <ul>
+          <li><strong>Google Firebase</strong> — kimlik doğrulama, Firestore veritabanı ve dosya depolama (Storage) için.</li>
+          <li><strong>Supabase</strong> (Edge Functions) — belirli ek bulut işlemleri ve fonksiyonlar için.</li>
+        </ul>
+        <p>Her iki sağlayıcı da tanınmış bulut veri merkezlerini kullanır ve sektör standardı güvenlik uygulamalarını benimser.</p>
+      </section>
+
+      <section id="minors">
+        <h2><span class="num">7.</span>Reşit olmayanlar ve öğrenciler için gizlilik</h2>
+        <p>Tamyyaz öncelikle okul öğrencilerine yöneliktir ve kullanıcılarımızın büyük bir kısmı reşit değildir (18 yaşın altında). Bu konuyu ciddiye alıyoruz:</p>
+        <ul>
+          <li>Gerekli olandan fazla hassas veri toplamıyoruz (örneğin kesin konum bilgisi veya reşit olmayan bir öğrenciden doğrudan ödeme bilgisi gibi).</li>
+          <li>Öğrenci hesapları çoğu durumda okul aracılığıyla veya bir veli/vasinin bilgisi/gözetimi altında oluşturulur, tamamen bağımsız olarak değil.</li>
+          <li>Veli hesabı bağlama özelliğini (bkz. bölüm 4) özellikle bir velinin veya vasinin çocuğunun uygulamayı kullanımını takip edip gözetebilmesi için tasarladık.</li>
+          <li>Bir veli veya öğretmenseniz ve reşit olmayan birinin verilerinin uygunsuz şekilde toplandığını düşünüyorsanız, hemen bizimle iletişime geçin (aşağıdaki bölüm 12); durumu inceleyip gerekirse verileri sileriz.</li>
+        </ul>
+      </section>
+
+      <section id="sharing">
+        <h2><span class="num">8.</span>Veri paylaşımı — verileri satıyor muyuz?</h2>
+        <p><strong>Hayır, asla.</strong> Kullanıcı verilerini hiçbir üçüncü tarafa satmıyoruz ve uygulama dışında reklam amacıyla kullanmıyoruz.</p>
+        <p>Veriler yalnızca uygulamanın çalışması için gerekli teknik hizmet sağlayıcılarla paylaşılır: Google Firebase, Supabase ve (bölüm 5'te açıklanan yapay zekâ özellikleri için) Google Gemini API — ve yalnızca her özelliğin işletilmesi için gereken ölçüde.</p>
+      </section>
+
+      <section id="security">
+        <h2><span class="num">9.</span>Veri güvenliği</h2>
+        <p>Verilerinizi korumak için makul güvenlik uygulamaları uyguluyoruz: parolalar Firebase Authentication ile şifrelenir ve uygulama ile sunucularımız arasındaki bağlantı HTTPS ile korunur. Her dijital hizmette olduğu gibi hiçbir sistem %100 güvenli değildir; bu nedenle parolanızı gizli tutmanızı öneririz.</p>
+      </section>
+
+      <section id="rights">
+        <h2><span class="num">10.</span>Verileriniz üzerindeki haklarınız</h2>
+        <p>Bizden her zaman şunları talep edebilirsiniz:</p>
+        <ul>
+          <li>Hesabınızla ilgili saklanan verilere erişim.</li>
+          <li>Yanlış bilgilerin düzeltilmesi veya güncellenmesi.</li>
+          <li>Hesabınızın ve ilişkili tüm verilerin sistemlerimizden silinmesi.</li>
+        </ul>
+        <p>Bu taleplerden birini iletmek için aşağıdaki bölüm 12 üzerinden bizimle iletişime geçin.</p>
+      </section>
+
+      <section id="changes">
+        <h2><span class="num">11.</span>Bu politikadaki değişiklikler</h2>
+        <p>Uygulamanın özelliklerindeki değişiklikleri veya yeni yasal gereklilikleri yansıtmak için bu politikayı zaman zaman güncelleyebiliriz. Bu sayfanın üstündeki "son güncelleme" tarihi her zaman en son yayınlanan sürümü yansıtır. Önemli bir değişiklik olması durumunda, sizi uygulama üzerinden bilgilendirmeye çalışacağız.</p>
+      </section>
+
+      <section id="contact">
+        <h2><span class="num">12.</span>Bize ulaşın</h2>
+        <p>Gizliliğiniz ve kişisel verilerinizle ilgili her türlü soru, talep veya istek için doğrudan bizimle iletişime geçin:</p>
+        <p><a class="contact-email" href="mailto:alaa.syra963@gmail.com">alaa.syra963@gmail.com</a></p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2026 Tamyyaz — dünyanın her yerindeki öğrenciler için bir ders çalışma ve odaklanma uygulaması.</p>
+      <div class="footer-links">
+        <a href="index-tr.html">İndir</a>
+        <a href="privacy-tr.html">Gizlilik Politikası</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

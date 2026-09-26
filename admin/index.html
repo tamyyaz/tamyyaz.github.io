@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>تميّز — لوحة التحكم</title>
+  <link rel="icon" type="image/png" href="../assets/favicon.png" />
+  <link rel="apple-touch-icon" href="../assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <span class="logo">
+        <img src="../assets/logo.png" alt="" class="logo-mark-img" />
+        تميّز <span class="logo-en">لوحة التحكم</span>
+      </span>
+    </div>
+  </header>
+
+  <main class="wrap narrow">
+    <section id="login-view" class="card">
+      <h1>تسجيل الدخول</h1>
+      <p class="help-text">
+        تحتاج GitHub Personal Access Token (Fine-grained) بصلاحية
+        Contents: Read & write على مستودع <code id="repo-hint">…</code> فقط.
+        أنشئه من
+        <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">هذه الصفحة</a>.
+      </p>
+      <form id="login-form">
+        <label>GitHub Token
+          <input type="password" id="token-input" required autocomplete="off" placeholder="github_pat_..." />
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="remember-token" />
+          تذكّرني على هذا الجهاز
+        </label>
+        <button type="submit">دخول</button>
+        <p id="login-error" class="error-text" hidden></p>
+      </form>
+    </section>
+
+    <section id="dashboard-view" hidden>
+      <div class="dash-header">
+        <span>المستودع: <strong id="repo-label"></strong></span>
+        <button id="logout-btn" class="link-btn-plain">تسجيل الخروج</button>
+      </div>
+
+      <div class="card">
+        <h1>نشر إصدار جديد</h1>
+        <form id="upload-form">
+          <label>ملف APK
+            <input type="file" id="apk-file" accept=".apk" required />
+          </label>
+          <label>رقم الإصدار
+            <input type="text" id="version-input" placeholder="مثال: 1.2.0" required />
+          </label>
+          <label>ملاحظات الإصدار (اختياري)
+            <textarea id="notes-input" rows="3" placeholder="ما الجديد في هذا الإصدار؟"></textarea>
+          </label>
+          <button type="submit" id="upload-btn">رفع الإصدار</button>
+          <div id="upload-progress" class="progress" hidden><div class="progress-bar"></div></div>
+          <p id="upload-status" class="status-text" hidden></p>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>الإصدارات المنشورة</h2>
+        <div class="table-scroll">
+          <table id="admin-release-list">
+            <thead>
+              <tr><th>الإصدار</th><th>التاريخ</th><th>الحجم</th><th></th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>
