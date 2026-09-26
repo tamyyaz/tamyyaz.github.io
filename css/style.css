@@ -6,6 +6,7 @@
   --bg: #0f0b1a;
   --surface: #17112b;
   --surface-alt: #221a3d;
+  --glass: rgba(23, 17, 43, 0.66);
   --text: #ede9f7;
   --text-muted: #a99bc4;
   --border: #2e2450;
@@ -21,10 +22,15 @@
 body {
   margin: 0;
   font-family: "Tajawal", system-ui, sans-serif;
-  background: var(--bg);
   color: var(--text);
   line-height: 1.6;
   overflow-x: hidden;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 800px 480px at 12% -8%, rgba(139, 92, 246, 0.28), transparent 60%),
+    radial-gradient(ellipse 600px 480px at 108% 12%, rgba(244, 168, 37, 0.14), transparent 60%),
+    radial-gradient(ellipse 700px 560px at 50% 115%, rgba(139, 92, 246, 0.2), transparent 60%);
+  background-repeat: no-repeat;
 }
 
 .wrap {
@@ -66,6 +72,7 @@ body {
   display: block;
   margin-inline-end: 8px;
   flex-shrink: 0;
+  filter: drop-shadow(0 2px 6px rgba(139, 92, 246, 0.5));
 }
 
 .logo-en {
@@ -137,13 +144,22 @@ main {
 }
 
 .feature-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 12.5px;
   font-weight: 700;
   color: var(--primary-light);
   background: var(--surface-alt);
   border: 1px solid var(--border);
-  padding: 6px 13px;
+  padding: 6px 13px 6px 11px;
   border-radius: 999px;
+}
+
+.chip-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
 }
 
 @keyframes fadeInUp {
@@ -160,6 +176,18 @@ main {
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.75) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15) rotate(8deg);
   }
 }
 
@@ -204,14 +232,53 @@ main {
   animation: spin 0.8s linear infinite;
 }
 
-/* Icon badge (app mark), used at the top of the hero card */
+/* Hero logo + sparkle decoration, at the top of the release card */
+
+.hero-logo-wrap {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto 18px;
+}
 
 .hero-logo {
   display: block;
   width: 140px;
   height: auto;
-  margin: 0 auto 18px;
   filter: drop-shadow(0 10px 20px rgba(139, 92, 246, 0.4));
+}
+
+.hero-logo.small {
+  width: 72px;
+  margin: 0 auto 14px;
+}
+
+.sparkle {
+  position: absolute;
+  color: var(--accent);
+  filter: drop-shadow(0 0 4px rgba(244, 168, 37, 0.6));
+  animation: twinkle 2.6s ease-in-out infinite;
+}
+
+.sparkle-1 {
+  width: 16px;
+  height: 16px;
+  top: -4px;
+  inset-inline-end: -10px;
+  animation-delay: 0s;
+}
+
+.sparkle-2 {
+  width: 11px;
+  height: 11px;
+  bottom: 8px;
+  inset-inline-start: -14px;
+  animation-delay: 1.1s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sparkle {
+    animation: none;
+  }
 }
 
 /* Hero card (latest release) */
@@ -219,7 +286,9 @@ main {
 .hero-card {
   position: relative;
   z-index: 0;
-  background: var(--surface);
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -266,6 +335,7 @@ main {
   font-size: 28px;
   font-weight: 900;
   margin: 0 0 6px;
+  text-shadow: 0 0 30px rgba(139, 92, 246, 0.45);
 }
 
 .hero-card .meta {
@@ -282,8 +352,10 @@ main {
 }
 
 .download-btn {
+  position: relative;
   display: inline-block;
-  background: var(--accent);
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), transparent 45%), var(--accent);
   color: #241a00;
   font-weight: 700;
   font-size: 17px;
@@ -407,6 +479,8 @@ tbody tr + tr td {
 }
 
 /* Long-form legal/document pages (privacy policy) */
+/* Kept on a solid (non-glass) surface on purpose: this content needs to
+   read as trustworthy and legible first, decorative second. */
 
 .doc {
   background: var(--surface);
@@ -421,6 +495,7 @@ tbody tr + tr td {
 .doc h1 {
   font-size: 26px;
   margin: 0 0 8px;
+  text-shadow: 0 0 24px rgba(139, 92, 246, 0.3);
 }
 
 .doc-updated {
