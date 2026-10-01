@@ -278,17 +278,35 @@ async function publishFromFile(file, version, notes, token) {
   return true;
 }
 
-async function publishFromLink(url, sizeMb, version, notes, token) {
-  if (!url) {
+// Share links people paste are usually a "view" page, not a direct download
+// (most commonly Google Drive's /file/d/<id>/view) — rewrite those to the
+// direct-download form so the public download button actually works.
+function normalizeDownloadUrl(url) {
+  const driveMatch = url.match(/drive\.google\.com\/file\/d\/([^/]+)/);
+  if (driveMatch) {
+    return `https://drive.google.com/uc?export=download&id=${driveMatch[1]}`;
+  }
+  return url;
+}
+
+function deriveFileName(url) {
+  const clean = url.split("?")[0].split("#")[0];
+  const last = clean.split("/").filter(Boolean).pop();
+  return last && last.includes(".") ? last : "app.apk";
+}
+
+async function publishFromLink(rawUrl, sizeMb, version, notes, token) {
+  if (!rawUrl) {
     showUploadStatus("لازم تحطي رابط تنزيل مباشر للملف.", false);
     return false;
   }
+  const url = normalizeDownloadUrl(rawUrl);
 
   showUploadStatus("جارٍ تحديث قائمة الإصدارات...", null);
   await publishManifestEntry(token, {
     version,
     notes,
-    fileName: url.split("/").pop() || "app.apk",
+    fileName: deriveFileName(url),
     sizeBytes: sizeMb ? Math.round(parseFloat(sizeMb) * 1024 * 1024) : undefined,
     uploadedAt: new Date().toISOString(),
     downloadUrl: url,
