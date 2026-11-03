@@ -43,7 +43,7 @@
   <main class="wrap">
     <article class="doc">
       <h1>Politique de confidentialité</h1>
-      <p class="doc-updated">Dernière mise à jour : 2 octobre 2026</p>
+      <p class="doc-updated">Dernière mise à jour : 3 novembre 2026</p>
 
       <div class="doc-note">
         <p>Cette page explique quelles données l'application <strong>Tamyyaz</strong> collecte, comment nous les utilisons, et qui peut les voir. Cette politique est aussi disponible en <a href="privacy.html">arabe</a>, en <a href="privacy-en.html">anglais</a>, et en <a href="privacy-de.html">allemand</a> et <a href="privacy-tr.html">turc</a>. La <a href="privacy-en.html">version anglaise</a> est la version de référence faisant foi ; en cas de divergence entre les traductions, c'est elle qui prévaut.</p>
@@ -75,49 +75,63 @@
 
       <section id="data">
         <h2><span class="num">2.</span>Données que nous collectons</h2>
-        <p>Pour faire fonctionner l'application et ses fonctionnalités, nous collectons les types de données suivants :</p>
+        <p>Pour faire fonctionner l'application et ses fonctions, nous collectons les types de données suivants :</p>
         <ul>
-          <li><strong>Informations de compte :</strong> votre nom, une adresse e-mail ou un identifiant de connexion (souvent un identifiant fourni par l'établissement plutôt qu'une adresse e-mail personnelle réelle), et un mot de passe — les mots de passe sont entièrement chiffrés via Firebase Authentication, et nous ne pouvons ni les voir ni les stocker en clair.</li>
-          <li><strong>Informations de profil :</strong> niveau scolaire, nom de l'établissement, classe/section, et une photo de profil facultative (entièrement optionnelle — vous pouvez utiliser l'application sans en ajouter une).</li>
-          <li><strong>Localisation approximative (élèves uniquement) :</strong> avec votre autorisation, lors de l'inscription, nous lisons une seule fois la position GPS de votre appareil et la convertissons immédiatement en un pays et une ville — jamais vos coordonnées exactes, que nous ne stockons pas, et jamais de façon continue ou suivie. Nous utilisons cette information uniquement pour comprendre dans quels pays se trouvent nos élèves, afin de mieux les accompagner et d'adapter le contenu par région. Vous pouvez refuser cette autorisation et créer votre compte normalement, sans aucune conséquence.</li>
-          <li><strong>Activité d'utilisation et progression scolaire :</strong> la durée et les horaires des sessions d'étude, un historique des questions, réponses et erreurs (pour vous aider à repérer vos points faibles), votre solde de « Cristaux » (une monnaie interne de motivation sans valeur monétaire réelle), et les badges/réussites que vous obtenez.</li>
+          <li><strong>Informations de compte :</strong> nom, adresse e-mail ou nom d'utilisateur (dans la plupart des cas un identifiant délivré par l'école, pas forcément votre vraie adresse personnelle) et mot de passe — le mot de passe est entièrement haché par Firebase Authentication de Google ; nous ne pouvons jamais le voir ni le stocker en clair.</li>
+          <li><strong>Informations de profil :</strong> niveau scolaire, nom de l'école, classe/section et photo de profil (entièrement facultative — vous pouvez utiliser l'application sans). La photo est conservée dans notre stockage cloud à une adresse web que toute personne possédant le lien peut ouvrir, et elle peut être affichée à d'autres élèves à côté de votre nom (par exemple dans les forums et les ligues).</li>
+          <li><strong>Position approximative (élèves uniquement) :</strong> avec votre autorisation, lors de l'inscription, nous lisons une seule fois la position de votre appareil par GPS et la convertissons immédiatement en nom de pays et de ville — pas vos coordonnées exactes, que nous ne stockons pas, et jamais en continu ni à des fins de suivi. Nous l'utilisons uniquement pour comprendre d'où viennent nos élèves en général afin de mieux les servir et d'adapter le contenu à leur région. Vous pouvez refuser cette autorisation et créer votre compte normalement, sans aucun effet.</li>
+          <li><strong>Activité d'étude et progression :</strong> la durée, l'heure de début et le résultat (terminée ou quittée tôt) de vos sessions d'étude, votre solde de « cristaux » (une monnaie de motivation interne sans valeur réelle), votre niveau, votre série, vos badges et réussites et — si vous misez des cristaux sur une session — la mise et son issue. Vos notes, erreurs, tentatives de quiz, plan d'étude et conversations avec le tuteur IA restent sur votre appareil et ne sont pas envoyés (hormis les courts résumés décrits aux sections 4 et 5).</li>
+          <li><strong>Dossiers scolaires (élèves d'une école uniquement) :</strong> lorsqu'une école utilise Tamyyaz, ses enseignants et administrateurs peuvent enregistrer pour chaque élève : les présences (absence ou retard, avec la date et les minutes de retard), les notes (matière, type comme examen ou oral, note, date et titre facultatif) et l'emploi du temps de la classe. Ces données sont créées par l'école, pas par l'élève.</li>
+          <li><strong>Messages et signalements :</strong> ce que vous écrivez dans les forums, les discussions de cours et les salles de concentration en groupe, ainsi que les signalements de problème envoyés depuis l'application (votre message avec la version de l'application et le modèle de votre appareil).</li>
+          <li><strong>Notifications et identifiants d'appareil :</strong> un jeton de notification (Firebase Cloud Messaging) et votre langue, afin de pouvoir envoyer des rappels et, pour les parents, des rapports et alertes. Nous conservons aussi un identifiant d'installation aléatoire utilisé pour les rapports de plantage.</li>
+          <li><strong>Données de plantage et de diagnostic :</strong> si l'application plante, Firebase Crashlytics reçoit les détails techniques (modèle d'appareil, version d'Android, version de l'application et ce que l'application faisait) — sans votre nom ni votre contenu.</li>
+          <li><strong>Publicités avec récompense (élèves inscrits par eux-mêmes uniquement) :</strong> si vous choisissez de regarder une vidéo publicitaire contre des cristaux, Google AdMob l'affiche et peut traiter des données techniques de l'appareil (comme l'adresse IP) pour la diffuser ; nous demandons des publicités destinées aux enfants et non personnalisées. Nous enregistrons seulement le nombre de publicités réclamées aujourd'hui pour appliquer la limite quotidienne.</li>
+          <li><strong>Achats :</strong> les paiements sont entièrement gérés par Google Play. Nous recevons seulement une confirmation d'achat (un jeton d'achat) pour créditer vos cristaux ou le Premium et empêcher qu'un achat soit utilisé deux fois ; nous ne voyons jamais vos données de carte. Si vous utilisez un code d'achat, nous enregistrons quel compte l'a utilisé.</li>
         </ul>
       </section>
 
       <section id="social">
         <h2><span class="num">3.</span>Fonctions sociales et discussions</h2>
-        <p>L'application propose des fonctions sociales qui vous permettent d'échanger avec d'autres élèves : une liste d'amis, un forum public, et des fils de discussion par cours. Veuillez noter que :</p>
+        <p>L'application propose des fonctions sociales qui vous aident à échanger avec d'autres élèves : une liste d'amis, des forums publics, des discussions de cours, une ligue hebdomadaire et des salles de concentration en groupe. Attention :</p>
         <ul>
-          <li>Les publications du forum public et les messages des discussions de cours <strong>ne sont pas des conversations privées</strong> — elles peuvent être lues par d'autres élèves, de votre établissement/classe ou plus largement selon la section où vous publiez.</li>
-          <li>Évitez de partager des informations personnelles sensibles (numéro de téléphone, adresse, détails familiaux) dans ces espaces.</li>
-          <li>Votre liste d'amis peut vous permettre de voir certaines activités ou statistiques d'étude de vos amis (comme le temps d'étude), selon les paramètres de confidentialité disponibles dans l'application.</li>
+          <li>Les messages des forums et des discussions de cours <strong>ne sont pas des conversations privées</strong> — ils sont lus par d'autres élèves, de votre école/classe ou en général selon la section où vous écrivez.</li>
+          <li>Évitez de partager des informations personnelles sensibles (numéro de téléphone, adresse, informations familiales) dans ces sections.</li>
+          <li>La liste d'amis vous permet de voir l'activité ou les statistiques d'étude de vos amis (comme les heures d'étude), selon les paramètres de confidentialité disponibles dans l'application.</li>
+          <li><strong>Ligue hebdomadaire et classements :</strong> les autres élèves de votre groupe de ligue (jusqu'à 30) et des classements peuvent voir votre nom d'affichage, votre photo et le nombre de minutes que vous avez étudiées cette semaine.</li>
+          <li><strong>Salles de concentration en groupe :</strong> les personnes qui ont le code de la salle voient votre nom et si vous êtes concentré(e), avez terminé ou êtes parti(e).</li>
+          <li>Les messages passent par un filtre de mots automatique avant d'être publiés, et les enseignants peuvent verrouiller le chat de leur matière.</li>
         </ul>
       </section>
 
       <section id="parents">
         <h2><span class="num">4.</span>Compte parent et supervision</h2>
-        <p>Tamyyaz permet à un parent ou tuteur de lier son propre compte à celui d'un élève. Une fois le lien établi, le parent peut :</p>
+        <p>Tamyyaz permet à un parent de lier son compte à celui d'un élève (via le code d'invitation de l'élève ou par l'école). Une fois le lien établi, le parent peut :</p>
         <ul>
-          <li>Consulter les statistiques d'étude de l'élève (temps d'étude, progression, devoirs).</li>
-          <li>Contrôler la fonction « Verrou de concentration » (Focus Lock), qui restreint l'utilisation d'autres applications pendant les périodes d'étude.</li>
+          <li>consulter les statistiques d'étude de l'élève (temps d'étude, progression, devoirs) et recevoir une notification de résumé hebdomadaire — temps d'étude et jours actifs et, pour les élèves d'une école, absences, retards et moyenne des notes de la semaine ;</li>
+          <li>consulter le dossier scolaire de l'élève — emploi du temps, présences et notes — lorsque l'élève appartient à une école ;</li>
+          <li>recevoir une notification lorsque l'école note l'élève absent ou en retard, ou ajoute une note ;</li>
+          <li>recevoir une notification lorsque l'élève quitte une session de concentration trop tôt (après la première minute) — l'élève en est averti avant de partir ;</li>
+          <li>contrôler à distance la fonction « Verrou de concentration » (qui limite l'usage d'autres applications pendant l'étude) — <strong>uniquement si l'élève active « Laisser mon parent gérer le verrou de concentration » dans ses propres réglages</strong> ; l'élève peut le désactiver à tout moment.</li>
         </ul>
-        <p>Cette liaison est conçue pour aider les parents à suivre de façon transparente la progression scolaire de leur enfant, et ne donne pas au parent accès aux messages privés ou au mot de passe de l'élève.</p>
+        <p>Ce lien est conçu pour aider les parents à suivre de manière transparente la progression de leurs enfants. Il ne donne jamais au parent accès aux conversations privées de l'élève avec le tuteur IA (qui restent sur l'appareil de l'élève), à son mot de passe ni à sa position exacte.</p>
       </section>
 
       <section id="ai">
         <h2><span class="num">5.</span>Fonctions IA (Gemini)</h2>
-        <p>Lorsque vous utilisez les fonctions d'IA de l'application — comme poser une question au « tuteur intelligent », demander une traduction, ou générer des questions d'entraînement — le texte que vous saisissez est envoyé à l'API <strong>Gemini</strong> de Google pour être traité et générer une réponse appropriée.</p>
-        <p>Cela signifie que Google agit comme sous-traitant tiers pour ce texte spécifique (uniquement le texte que vous soumettez à cette fonction, pas l'ensemble de vos données). Ce traitement est également soumis à la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">politique de confidentialité de Google</a>. Nous recommandons d'éviter d'inclure des informations personnelles sensibles (comme un numéro de téléphone ou une adresse) dans ces requêtes.</p>
+        <p>Lorsque vous utilisez les fonctions d'IA de l'application — poser une question au « tuteur intelligent », demander une traduction, générer des questions d'entraînement, construire un plan d'étude à partir de vos propres notes ou transformer une page de cahier photographiée en cartes de révision — le texte que vous écrivez (et la photo ou le fichier que vous choisissez de joindre) est envoyé via notre serveur à l'<strong>API Gemini</strong> de Google afin d'être traité et de générer une réponse. Les photos et fichiers servent uniquement à produire la réponse et ne sont pas conservés par nous ensuite.</p>
+        <p>Cela signifie que Google agit comme sous-traitant tiers pour ce contenu précis (uniquement ce que vous envoyez à cette fonction, pas toutes vos données). La <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">politique de confidentialité de Google</a> s'applique aussi à ce traitement. Nous vous conseillons d'éviter les informations personnelles sensibles (comme un numéro de téléphone ou une adresse) dans ces demandes.</p>
+        <p><strong>Voix :</strong> dicter une question utilise le service de reconnaissance vocale de votre appareil (fourni par Android et Google) pour transformer votre voix en texte — Tamyyaz ne reçoit ni ne conserve d'enregistrements. La lecture des réponses à voix haute utilise le moteur de synthèse vocale de votre appareil.</p>
       </section>
 
       <section id="storage">
         <h2><span class="num">6.</span>Où vos données sont stockées</h2>
-        <p>Vos données (compte, fichiers, historique d'activité) sont stockées sur une infrastructure cloud fournie par :</p>
+        <p>Vos données (compte, fichiers, journal d'activité) sont stockées sur l'infrastructure cloud de :</p>
         <ul>
-          <li><strong>Google Firebase</strong> — pour l'authentification, la base de données Firestore, et le stockage de fichiers (Storage).</li>
-          <li><strong>Supabase</strong> (Edge Functions) — pour certains traitements et fonctions cloud supplémentaires.</li>
+          <li><strong>Google Firebase</strong> — authentification, base de données (Firestore), rapports de plantage (Crashlytics) et notifications push (Cloud Messaging).</li>
+          <li><strong>Supabase</strong> — les fonctions cloud qui effectuent les traitements, et le stockage des photos de profil.</li>
+          <li><strong>Votre propre appareil</strong> — vos notes, erreurs, tentatives de quiz, plan d'étude, conversations avec le tuteur IA, cartes de partage et réglages restent dans le stockage privé de l'application sur votre téléphone ; ils sont supprimés lorsque vous désinstallez l'application ou effacez ses données.</li>
         </ul>
-        <p>Les deux fournisseurs utilisent des centres de données cloud reconnus et appliquent des pratiques de sécurité standard du secteur.</p>
+        <p>Les deux fournisseurs cloud utilisent des centres de données connus et appliquent des mesures de sécurité standard du secteur.</p>
       </section>
 
       <section id="minors">
@@ -128,13 +142,15 @@
           <li>Les comptes élèves sont, dans la plupart des cas, créés par l'établissement ou avec la connaissance/supervision d'un parent ou tuteur, plutôt que de façon totalement indépendante.</li>
           <li>Nous avons spécifiquement conçu la fonction de liaison parent-enfant (voir section 4) pour permettre à un parent ou tuteur de suivre et superviser l'utilisation de l'application par son enfant.</li>
           <li>Si vous êtes parent ou enseignant et pensez que des données d'un mineur ont été collectées de façon inappropriée, contactez-nous immédiatement (section 12 ci-dessous) et nous examinerons la situation, en supprimant les données si nécessaire.</li>
+          <li>Les dossiers scolaires (présences, notes, emploi du temps) sont saisis par l'école de l'élève et ne sont visibles que par l'élève, le parent lié et les enseignants et administrateurs autorisés de l'école.</li>
+          <li>La seule publicité est une vidéo récompensée facultative dans la boutique de cristaux, réservée aux élèves inscrits par eux-mêmes (jamais aux élèves d'une école). Elle est demandée en mode destiné aux enfants : pas de publicités personnalisées, contenu familial uniquement.</li>
         </ul>
-      </section>
+            </section>
 
       <section id="sharing">
         <h2><span class="num">8.</span>Partage des données — les vendons-nous ?</h2>
         <p><strong>Non, jamais.</strong> Nous ne vendons les données des utilisateurs à aucun tiers, et nous ne les utilisons pas à des fins publicitaires en dehors de l'application.</p>
-        <p>Les données ne sont partagées qu'avec les prestataires techniques nécessaires au fonctionnement de l'application : Google Firebase, Supabase, et l'API Google Gemini (pour les fonctions IA décrites en section 5), et uniquement dans la mesure nécessaire au fonctionnement de chaque fonctionnalité.</p>
+        <p>Les données sont partagées uniquement avec les prestataires techniques nécessaires au fonctionnement de l'application : Google Firebase (base de données, connexion, rapports de plantage, notifications), Supabase (fonctions cloud et stockage des photos), l'API Google Gemini (pour les fonctions d'IA de la section 5) Google Play (paiement), Google AdMob (les publicités avec récompense facultatives) — et seulement dans la mesure requise par chaque fonction. Le contenu de la bibliothèque qui s'ouvre dans l'application (par exemple des vidéos YouTube, des jeux Wordwall ou des fichiers PDF) est fourni par des tiers et se charge depuis leurs serveurs selon leurs propres politiques de confidentialité ; nous ne leur envoyons pas les données de votre compte.</p>
       </section>
 
       <section id="security">
@@ -144,19 +160,21 @@
 
       <section id="rights">
         <h2><span class="num">10.</span>Vos droits sur vos données</h2>
-        <p>Vous pouvez à tout moment nous demander de :</p>
+        <p>À tout moment, vous pouvez nous demander :</p>
         <ul>
-          <li>Accéder aux données stockées concernant votre compte.</li>
-          <li>Corriger ou mettre à jour des informations inexactes.</li>
-          <li>Supprimer votre compte et l'ensemble des données associées de nos systèmes.</li>
+          <li>de consulter les données conservées sur votre compte ;</li>
+          <li>de corriger ou de mettre à jour des informations inexactes ;</li>
+          <li>de supprimer complètement votre compte et vos données de nos systèmes.</li>
         </ul>
-        <p><strong>Supprimer votre compte directement dans l'application :</strong> les élèves et les parents peuvent supprimer eux-mêmes leur compte à tout moment depuis l'application — ouvrez <strong>Paramètres → Supprimer mon compte</strong>, puis confirmez. C'est immédiat et définitif, et cela efface votre compte et toutes les données associées de nos systèmes.</p>
-        <p>Pour toute autre demande (accès, correction, ou si votre type de compte ne permet pas l'auto-suppression dans l'application), contactez-nous via la section 12 ci-dessous.</p>
+        <p><strong>Supprimer votre compte directement depuis l'application :</strong> les élèves et les parents peuvent supprimer eux-mêmes leur compte à tout moment depuis l'application : ouvrez Réglages → Supprimer mon compte et confirmez. Cette action est immédiate et définitive. Elle supprime votre connexion et votre profil, votre photo de profil, votre historique d'étude, les dossiers scolaires vous concernant (présences et notes), vos résultats de quiz, signalements de problème et mises de session, vos entrées de ligue et de liste d'amis, ainsi que les messages de forum et de discussion de cours que vous avez écrits. Ce qui peut subsister : un enregistrement d'achat (un jeton d'achat anonyme) que nous devons conserver pour prévenir la fraude et pour la comptabilité, et des statistiques agrégées qui ne vous identifient pas.</p>
+        <p><strong>Durée de conservation :</strong> aussi longtemps que le compte existe. Les dossiers scolaires sont conservés tant que le compte existe et sont supprimés avec lui, ou lorsque l'école est retirée du service. Pour les élèves dont le compte a été créé par une école, les demandes concernant les dossiers scolaires peuvent aussi être adressées à l'école.</p>
+        <p>Pour toute autre demande (accès, correction, ou si votre type de compte ne permet pas la suppression autonome dans l'application), contactez-nous via la section 12 ci-dessous.</p>
       </section>
 
       <section id="changes">
         <h2><span class="num">11.</span>Modifications de cette politique</h2>
         <p>Nous pouvons mettre à jour cette politique de temps à autre pour refléter des évolutions des fonctionnalités de l'application ou de nouvelles exigences légales. La date de « dernière mise à jour » en haut de cette page reflète toujours la dernière version publiée. En cas de changement important, nous essaierons de vous en informer via l'application elle-même.</p>
+        <p><strong>Ce qui a changé le 3 novembre 2026 :</strong> nous avons ajouté les dossiers scolaires (présences, notes, emploi du temps) et les alertes que les parents reçoivent à leur sujet ; la ligue hebdomadaire, les salles de concentration en groupe et les mises de session ; la lecture par l'IA de pages photographiées ; les rapports de plantage (Firebase Crashlytics) ; des publicités vidéo avec récompense facultatives (Google AdMob) dans la boutique de cristaux pour les élèves inscrits par eux-mêmes ; le Verrou de concentration à distance du parent exige désormais l'autorisation de l'élève ; et la suppression d'un compte efface aussi vos dossiers scolaires, votre photo, vos résultats de quiz, vos signalements et vos messages de forum.</p>
       </section>
 
       <section id="contact">

@@ -43,7 +43,7 @@
   <main class="wrap">
     <article class="doc">
       <h1>Privacy Policy</h1>
-      <p class="doc-updated">Last updated: October 2, 2026</p>
+      <p class="doc-updated">Last updated: November 3, 2026</p>
 
       <div class="doc-note">
         <p>This page explains what data the <strong>Tamyyaz</strong> app collects, how we use it, and who can see it. This policy is also available in <a href="privacy.html">Arabic</a>, <a href="privacy-fr.html">French</a>, <a href="privacy-de.html">German</a>, and <a href="privacy-tr.html">Turkish</a>. This English version is the primary and authoritative one; if there is ever a conflict between translations, this version governs.</p>
@@ -77,47 +77,61 @@
         <h2><span class="num">2.</span>Data we collect</h2>
         <p>To run the app and its features, we collect the following types of data:</p>
         <ul>
-          <li><strong>Account information:</strong> your name, an email address or login identifier (in most cases a school-issued identifier rather than a personal real email), and a password — passwords are fully encrypted via Firebase Authentication, and we cannot see or store them in plain text.</li>
-          <li><strong>Profile information:</strong> grade level, school name, class/section, and an optional profile picture (entirely optional — you can use the app without one).</li>
-          <li><strong>Approximate location (students only):</strong> with your permission, at sign-up we read your device's GPS location once and immediately resolve it to a country and city — never your exact coordinates, which we never store, and never on an ongoing or tracked basis. We use this only to understand which countries our students are in, so we can better support them and tailor content by region. You can decline this permission and still create your account normally, with no effect on the app.</li>
-          <li><strong>Usage activity and academic progress:</strong> the duration and timing of study sessions, a history of questions, answers, and mistakes (to help you track weak areas), your in-app "Crystal" balance (an internal motivational currency with no real monetary value), and badges/achievements you earn.</li>
+          <li><strong>Account information:</strong> name, an email or a username (in most cases an identifier issued through the school, not necessarily your real personal email) and a password — the password is fully hashed by Google's Firebase Authentication; we can never see it or store it as plain text.</li>
+          <li><strong>Profile information:</strong> grade level, school name, class/section and a profile photo (completely optional — you can use the app without one). The photo is kept in our cloud storage at a web address that anyone who has the link can open, and it may be shown to other students next to your name (for example in forums and leagues).</li>
+          <li><strong>Approximate location (students only):</strong> with your permission, at sign-up we read your device's location once via GPS and immediately convert it into a country and city name — not your exact coordinates, which we do not store, and never continuously or as tracking. We use it only to understand where our students are in general so we can serve them and tailor content to their region. You can decline this permission and create your account normally, with no effect.</li>
+          <li><strong>Study activity and progress:</strong> the length, start time and result (completed or left early) of your study sessions, your "crystals" balance (an in-app motivational currency with no real-world value), your level, streak, badges and achievements, and — if you stake crystals on a session — the stake and its outcome. Your own grades, mistakes, quiz attempts, study plan and AI tutor conversations stay on your device and are not uploaded (apart from the short summaries described in sections 4 and 5).</li>
+          <li><strong>School records (students of a school only):</strong> when a school uses Tamyyaz, its teachers and administrators can record for each student: attendance (absent or late, with the date and minutes late), marks (subject, type such as exam or oral recitation, score, date and an optional title) and the class timetable. These records are created by the school, not by the student.</li>
+          <li><strong>Messages and reports:</strong> what you write in the forums, lesson discussions and group focus rooms, and the problem reports you send from the app (your message together with the app version and your device model).</li>
+          <li><strong>Notification and device identifiers:</strong> a notification token (Firebase Cloud Messaging) and your language, so that we can send reminders and, for parents, reports and alerts. We also keep a random installation identifier used for crash reports.</li>
+          <li><strong>Crash and diagnostic data:</strong> if the app crashes, Firebase Crashlytics receives the technical details (device model, Android version, app version and what the app was doing) — without your name or content.</li>
+          <li><strong>Rewarded ads (students who signed up on their own only):</strong> if you choose to watch a video ad for crystals, Google AdMob shows it and may process technical device data (such as IP address and device information) to deliver it; we ask for child-directed, non-personalised ads. We record only how many ads you claimed today, to apply the daily limit.</li>
+          <li><strong>Purchases:</strong> payments are handled entirely by Google Play. We receive only a purchase confirmation (a purchase token) so that we can credit your crystals or Premium and prevent a purchase being used twice; we never see your card details. If you redeem a purchase code, we record which account used it.</li>
         </ul>
       </section>
 
       <section id="social">
         <h2><span class="num">3.</span>Social features and discussions</h2>
-        <p>The app includes social features that let you connect with other students: a friends list, a public forum, and per-lesson discussion threads. Please note that:</p>
+        <p>The app has social features that help you connect with other students: a friends list, public forums, lesson discussions, a weekly league and group focus rooms. Please note:</p>
         <ul>
-          <li>Public forum posts and lesson discussion messages are <strong>not private conversations</strong> — they can be read by other students, either from your own school/class or more broadly depending on the section you post in.</li>
-          <li>Avoid sharing sensitive personal information (phone number, address, family details) in these areas.</li>
-          <li>Your friends list may let you see certain study-related activity or stats of your friends (such as study hours), depending on the privacy settings available in the app.</li>
+          <li>Forum messages and lesson discussions are <strong>not private conversations</strong> — they are read by other students, either from your own school/class or in general depending on the section you write in.</li>
+          <li>Avoid sharing any sensitive personal information (phone number, address, family details) in these sections.</li>
+          <li>The friends list lets you see your friends' study-related activity or statistics (such as hours studied), according to the privacy settings available in the app.</li>
+          <li><strong>Weekly league and rankings:</strong> the other students in your league group (up to 30) and on the leaderboards can see your display name, photo and the minutes you studied that week.</li>
+          <li><strong>Group focus rooms:</strong> people who have the room code see your name and whether you are focusing, finished or have left.</li>
+          <li>Messages pass an automatic word filter before they are posted, and teachers can lock the chat of their subject.</li>
         </ul>
       </section>
 
       <section id="parents">
         <h2><span class="num">4.</span>Parent accounts and supervision</h2>
-        <p>Tamyyaz lets a parent or guardian link their own account to a student's account. Once linked, the parent can:</p>
+        <p>Tamyyaz lets a parent link their account to a student's account (through the student's invite code, or by the school). Once linked, the parent can:</p>
         <ul>
-          <li>View the student's study statistics (study time, progress, homework).</li>
-          <li>Control the "Focus Lock" feature, which restricts the student's use of other apps during study time.</li>
+          <li>see the student's study statistics (study time, progress, assignments) and receive a weekly summary notification — study time and active days and, for school students, absences, late arrivals and the average of the week's marks;</li>
+          <li>see the student's school records — timetable, attendance and marks — when the student belongs to a school;</li>
+          <li>receive a notification when the school records the student as absent or late, or adds a mark;</li>
+          <li>receive a notification when the student leaves a focus session early (after the first minute) — the student is warned about this before leaving;</li>
+          <li>control the "Focus Lock" feature remotely (which limits the student's use of other apps while studying) — <strong>only if the student turns on "Let my parent control the focus lock" in their own settings</strong>; the student can turn it off again at any time.</li>
         </ul>
-        <p>This linking is designed to help parents transparently follow their child's academic progress, and it does not give the parent access to the student's private messages or password.</p>
+        <p>This link is designed to help parents follow their children's progress transparently. It never gives a parent access to the student's private conversations with the AI tutor (which stay on the student's device), their password or their exact location.</p>
       </section>
 
       <section id="ai">
         <h2><span class="num">5.</span>AI features (Gemini)</h2>
-        <p>When you use the app's AI features — such as asking the "smart tutor," requesting a translation, or generating practice questions — the text you write is sent to Google's <strong>Gemini API</strong> for processing so it can generate an appropriate response.</p>
-        <p>This means Google acts as a third-party data processor for that specific text (only the text you submit to that feature, not all of your data). This processing is also subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>. We recommend avoiding sensitive personal information (such as a phone number or address) in these requests.</p>
+        <p>When you use the app's AI features — asking the "smart tutor", requesting a translation, generating practice questions, building a study plan from your own grades, or turning a photographed notebook page into flashcards — the text you write (and a photo or file you choose to attach) is sent through our server to Google's <strong>Gemini API</strong> so that it can be processed and a reply generated. Photos and files are used only to produce the answer and are not stored by us afterwards.</p>
+        <p>This means Google acts as a third-party processor of that specific content (only what you send to that feature, not all your data). <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a> also applies to that processing. We recommend avoiding sensitive personal information (such as a phone number or address) in these requests.</p>
+        <p><strong>Voice:</strong> speaking a question uses your device's speech-recognition service (provided by Android and Google) to turn your speech into text — Tamyyaz does not receive or store recordings. Reading answers aloud uses the text-to-speech engine on your device.</p>
       </section>
 
       <section id="storage">
         <h2><span class="num">6.</span>Where your data is stored</h2>
-        <p>Your data (account, files, activity history) is stored on cloud infrastructure provided by:</p>
+        <p>Your data (account, files, activity log) is stored on cloud infrastructure from:</p>
         <ul>
-          <li><strong>Google Firebase</strong> — for Authentication, the Firestore database, and file Storage.</li>
-          <li><strong>Supabase</strong> (Edge Functions) — for certain additional cloud processing and functions.</li>
+          <li><strong>Google Firebase</strong> — authentication, the database (Firestore), crash reports (Crashlytics) and push notifications (Cloud Messaging).</li>
+          <li><strong>Supabase</strong> — the cloud functions that do the processing, and the storage of profile photos.</li>
+          <li><strong>Your own device</strong> — your grades, mistakes, quiz attempts, study plan, AI tutor conversations, share cards and settings stay in the app's private storage on your phone; they are removed when you uninstall the app or clear its data.</li>
         </ul>
-        <p>Both providers use recognized cloud data centers and apply standard industry security practices.</p>
+        <p>Both cloud providers use well-known cloud data centres and apply standard industry security measures.</p>
       </section>
 
       <section id="minors">
@@ -128,13 +142,15 @@
           <li>Student accounts are, in most cases, created through the school or with a parent/guardian's knowledge or supervision, rather than fully independently.</li>
           <li>We specifically built the parent-linking feature (see section 4 above) so a parent or guardian can follow and supervise their child's use of the app.</li>
           <li>If you are a parent or teacher and believe a minor's data was collected inappropriately, contact us immediately (section 12 below) and we will review the matter and delete the data if warranted.</li>
+          <li>School records (attendance, marks, timetable) are entered by the student's school and are visible only to the student, the linked parent and the school's authorised teachers and administrators.</li>
+          <li>The only advertising is an optional rewarded video ad in the crystals store, available only to students who signed up on their own (never to a school's students). It is requested as child-directed: no personalised ads and only family-friendly content.</li>
         </ul>
-      </section>
+            </section>
 
       <section id="sharing">
         <h2><span class="num">8.</span>Data sharing — do we sell it?</h2>
         <p><strong>No, never.</strong> We do not sell user data to any third party, and we do not use it for advertising outside the app.</p>
-        <p>Data is only shared with the technical service providers necessary to run the app itself: Google Firebase, Supabase, and the Google Gemini API (for the AI features described in section 5), and only to the extent needed to operate each feature.</p>
+        <p>Data is shared only with the technical service providers needed to run the app: Google Firebase (database, sign-in, crash reports, notifications), Supabase (cloud functions and photo storage), the Google Gemini API (for the AI features in section 5) and Google Play (billing), Google AdMob (the optional rewarded ads) — and only as far as each feature requires. Content from the library that opens inside the app (for example YouTube videos, Wordwall games or PDF files) is provided by third parties and loads from their servers under their own privacy policies; we do not send them your account data.</p>
       </section>
 
       <section id="security">
@@ -144,19 +160,21 @@
 
       <section id="rights">
         <h2><span class="num">10.</span>Your rights over your data</h2>
-        <p>You may ask us at any time to:</p>
+        <p>At any time you can ask us to:</p>
         <ul>
-          <li>Access the data stored about your account.</li>
-          <li>Correct or update inaccurate information.</li>
-          <li>Delete your account and all associated data from our systems.</li>
+          <li>show you the data stored about your account;</li>
+          <li>correct or update inaccurate information;</li>
+          <li>delete your account and your data from our systems completely.</li>
         </ul>
-        <p><strong>Deleting your account directly in the app:</strong> students and parents can delete their own account at any time from within the app — open <strong>Settings → Delete my account</strong>, then confirm. This is immediate and permanent, and erases your account and all associated data from our systems.</p>
-        <p>For any other request (access, correction, or if your account type doesn't support in-app self-deletion), contact us via section 12 below.</p>
+        <p><strong>Delete your account directly from the app:</strong> students and parents can delete their own account at any time from inside the app: open Settings → Delete my account and confirm. This is immediate and permanent. It deletes your sign-in and profile, your profile photo, your study history, the school records about you (attendance and marks), your quiz results, problem reports and session stakes, your league and friend-list entries, and the forum and lesson-chat messages you wrote. What may remain: a purchase record (an anonymous purchase token) that we must keep to prevent fraud and for accounting, and statistics that are combined and do not identify you.</p>
+        <p><strong>How long we keep data:</strong> for as long as the account exists. School records are kept while the account exists and are deleted with it, or when the school is removed from the service. For students whose accounts were created by a school, requests about school records can also be sent to the school.</p>
+        <p>For any other request (access, correction, or if your account type does not support self-deletion inside the app), contact us via section 12 below.</p>
       </section>
 
       <section id="changes">
         <h2><span class="num">11.</span>Changes to this policy</h2>
         <p>We may update this policy from time to time to reflect changes in the app's features or new legal requirements. The "last updated" date at the top of this page always reflects the latest published version. If a change is significant, we will try to notify you through the app itself.</p>
+        <p><strong>What changed on November 3, 2026:</strong> we added school records (attendance, marks, timetable) and the alerts parents receive about them; the weekly league, group focus rooms and session stakes; AI reading of photographed pages; crash reports (Firebase Crashlytics); optional rewarded video ads (Google AdMob) in the crystals store for students who signed up on their own; the parent's remote Focus Lock now requires the student's permission; and deleting an account now also removes your school records, photo, quiz results, problem reports and forum posts.</p>
       </section>
 
       <section id="contact">

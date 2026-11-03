@@ -43,7 +43,7 @@
   <main class="wrap">
     <article class="doc">
       <h1>Datenschutzerklärung</h1>
-      <p class="doc-updated">Zuletzt aktualisiert: 2. Oktober 2026</p>
+      <p class="doc-updated">Zuletzt aktualisiert: 3. November 2026</p>
 
       <div class="doc-note">
         <p>Diese Seite erklärt, welche Daten die App <strong>Tamyyaz</strong> erhebt, wie wir sie nutzen und wer sie sehen kann. Diese Richtlinie ist auch auf <a href="privacy.html">Arabisch</a>, <a href="privacy-en.html">Englisch</a>, <a href="privacy-fr.html">Französisch</a> und <a href="privacy-tr.html">Türkisch</a> verfügbar. Maßgeblich ist die <a href="privacy-en.html">englische Fassung</a>; bei Widersprüchen zwischen den Übersetzungen gilt diese.</p>
@@ -75,49 +75,63 @@
 
       <section id="data">
         <h2><span class="num">2.</span>Daten, die wir erheben</h2>
-        <p>Um die App und ihre Funktionen bereitzustellen, erheben wir folgende Datenarten:</p>
+        <p>Um die App und ihre Funktionen zu betreiben, erheben wir die folgenden Arten von Daten:</p>
         <ul>
-          <li><strong>Kontoinformationen:</strong> deinen Namen, eine E-Mail-Adresse oder einen Anmeldenamen (meist eine von der Schule vergebene Kennung statt einer echten privaten E-Mail-Adresse) sowie ein Passwort — Passwörter werden vollständig über Firebase Authentication verschlüsselt; wir können sie weder einsehen noch im Klartext speichern.</li>
-          <li><strong>Profilinformationen:</strong> Klassenstufe, Name der Schule, Klasse/Abschnitt sowie ein optionales Profilbild (völlig freiwillig — die App funktioniert auch ohne).</li>
-          <li><strong>Ungefährer Standort (nur Schüler):</strong> mit deiner Erlaubnis lesen wir bei der Registrierung einmalig den GPS-Standort deines Geräts aus und wandeln ihn sofort in ein Land und eine Stadt um — niemals deine genauen Koordinaten, die wir nicht speichern, und niemals fortlaufend oder nachverfolgt. Wir nutzen diese Information nur, um zu verstehen, in welchen Ländern unsere Schüler sind, damit wir sie besser unterstützen und Inhalte regional anpassen können. Du kannst diese Erlaubnis ablehnen und trotzdem normal ein Konto erstellen, ohne jede Auswirkung.</li>
-          <li><strong>Nutzungsaktivität und Lernfortschritt:</strong> Dauer und Zeitpunkt von Lernsitzungen, ein Verlauf von Fragen, Antworten und Fehlern (damit du Schwachstellen erkennen kannst), dein „Kristall“-Guthaben (eine interne Motivationswährung ohne realen Geldwert) sowie erworbene Abzeichen/Erfolge.</li>
+          <li><strong>Kontoinformationen:</strong> Name, eine E-Mail-Adresse oder ein Benutzername (meist eine über die Schule vergebene Kennung, nicht unbedingt deine echte private E-Mail-Adresse) und ein Passwort — das Passwort wird von Googles Firebase Authentication vollständig gehasht; wir können es weder einsehen noch im Klartext speichern.</li>
+          <li><strong>Profilinformationen:</strong> Klassenstufe, Schulname, Klasse/Gruppe und ein Profilfoto (völlig freiwillig — du kannst die App auch ohne nutzen). Das Foto liegt in unserem Cloud-Speicher unter einer Webadresse, die jeder öffnen kann, der den Link hat, und es kann anderen Schülern neben deinem Namen angezeigt werden (zum Beispiel in Foren und Ligen).</li>
+          <li><strong>Ungefährer Standort (nur Schüler):</strong> mit deiner Erlaubnis lesen wir bei der Registrierung einmalig den Standort deines Geräts per GPS aus und wandeln ihn sofort in einen Länder- und Städtenamen um — nicht deine genauen Koordinaten, die wir nicht speichern, und nie dauerhaft oder zur Verfolgung. Wir nutzen das nur, um grob zu verstehen, woher unsere Schüler kommen, damit wir sie besser versorgen und Inhalte auf ihre Region abstimmen können. Du kannst diese Berechtigung ablehnen und dein Konto ganz normal erstellen, ohne Auswirkungen.</li>
+          <li><strong>Lernaktivität und Fortschritt:</strong> Dauer, Startzeit und Ergebnis (abgeschlossen oder vorzeitig verlassen) deiner Lernsitzungen, dein „Kristalle“-Guthaben (eine App-interne Motivationswährung ohne realen Wert), dein Level, deine Serie, Abzeichen und Erfolge und — wenn du Kristalle auf eine Sitzung setzt — der Einsatz und sein Ausgang. Deine eigenen Noten, Fehler, Quizversuche, dein Lernplan und deine Gespräche mit dem KI-Tutor bleiben auf deinem Gerät und werden nicht hochgeladen (abgesehen von den kurzen Zusammenfassungen in den Abschnitten 4 und 5).</li>
+          <li><strong>Schulakten (nur Schüler einer Schule):</strong> Nutzt eine Schule Tamyyaz, können ihre Lehrkräfte und Administratoren für jeden Schüler erfassen: Anwesenheit (abwesend oder verspätet, mit Datum und Minuten der Verspätung), Noten (Fach, Art wie Prüfung oder mündliche Leistung, Punkte, Datum und ein optionaler Titel) und den Stundenplan der Klasse. Diese Einträge erstellt die Schule, nicht der Schüler.</li>
+          <li><strong>Nachrichten und Meldungen:</strong> was du in Foren, Unterrichtsdiskussionen und Gruppen-Fokusräumen schreibst, sowie Problemmeldungen aus der App (deine Nachricht zusammen mit App-Version und Gerätemodell).</li>
+          <li><strong>Benachrichtigungs- und Gerätekennungen:</strong> ein Benachrichtigungs-Token (Firebase Cloud Messaging) und deine Sprache, damit wir Erinnerungen und — für Eltern — Berichte und Hinweise senden können. Außerdem speichern wir eine zufällige Installationskennung für Absturzberichte.</li>
+          <li><strong>Absturz- und Diagnosedaten:</strong> Stürzt die App ab, erhält Firebase Crashlytics die technischen Details (Gerätemodell, Android-Version, App-Version und was die App gerade tat) — ohne deinen Namen oder Inhalte.</li>
+          <li><strong>Belohnte Werbung (nur selbst registrierte Schüler):</strong> Wenn du dich für ein Werbevideo gegen Kristalle entscheidest, zeigt Google AdMob es an und kann dafür technische Gerätedaten (etwa die IP-Adresse) verarbeiten; wir fordern kindgerechte, nicht personalisierte Werbung an. Wir speichern nur, wie viele Werbevideos du heute eingelöst hast, um das Tageslimit anzuwenden.</li>
+          <li><strong>Käufe:</strong> Zahlungen werden vollständig von Google Play abgewickelt. Wir erhalten nur eine Kaufbestätigung (ein Kauf-Token), um dir Kristalle oder Premium gutzuschreiben und zu verhindern, dass ein Kauf doppelt verwendet wird; deine Kartendaten sehen wir nie. Löst du einen Kaufcode ein, speichern wir, welches Konto ihn verwendet hat.</li>
         </ul>
       </section>
 
       <section id="social">
         <h2><span class="num">3.</span>Soziale Funktionen und Diskussionen</h2>
-        <p>Die App bietet soziale Funktionen, mit denen du dich mit anderen Schülern austauschen kannst: eine Freundesliste, ein öffentliches Forum und Diskussionsstränge zu einzelnen Lektionen. Bitte beachte:</p>
+        <p>Die App hat soziale Funktionen, die dir helfen, mit anderen Schülern in Kontakt zu treten: eine Freundesliste, öffentliche Foren, Unterrichtsdiskussionen, eine Wochenliga und Gruppen-Fokusräume. Bitte beachte:</p>
         <ul>
-          <li>Beiträge im öffentlichen Forum und Nachrichten in Lektions-Diskussionen sind <strong>keine privaten Gespräche</strong> — sie können von anderen Schülern gelesen werden, je nach Bereich entweder aus deiner eigenen Schule/Klasse oder darüber hinaus.</li>
-          <li>Vermeide es, sensible persönliche Informationen (Telefonnummer, Adresse, Familiendetails) in diesen Bereichen zu teilen.</li>
-          <li>Deine Freundesliste kann dir je nach Datenschutzeinstellungen bestimmte lernbezogene Aktivitäten oder Statistiken deiner Freunde anzeigen (z. B. Lernzeit).</li>
+          <li>Nachrichten in Foren und Unterrichtsdiskussionen sind <strong>keine privaten Gespräche</strong> — sie werden von anderen Schülern gelesen, je nach Bereich aus deiner Schule/Klasse oder allgemein.</li>
+          <li>Teile in diesen Bereichen keine sensiblen persönlichen Informationen (Telefonnummer, Adresse, Familiendetails).</li>
+          <li>Über die Freundesliste siehst du lernbezogene Aktivitäten oder Statistiken deiner Freunde (zum Beispiel Lernstunden), gemäß den in der App verfügbaren Datenschutzeinstellungen.</li>
+          <li><strong>Wochenliga und Ranglisten:</strong> die anderen Schüler deiner Ligagruppe (bis zu 30) und der Ranglisten sehen deinen Anzeigenamen, dein Foto und die Minuten, die du in dieser Woche gelernt hast.</li>
+          <li><strong>Gruppen-Fokusräume:</strong> Personen, die den Raumcode haben, sehen deinen Namen und ob du dich gerade konzentrierst, fertig bist oder gegangen bist.</li>
+          <li>Nachrichten durchlaufen vor der Veröffentlichung einen automatischen Wortfilter, und Lehrkräfte können den Chat ihres Fachs sperren.</li>
         </ul>
       </section>
 
       <section id="parents">
         <h2><span class="num">4.</span>Eltern-Konto und Aufsicht</h2>
-        <p>Tamyyaz ermöglicht es einem Elternteil oder Erziehungsberechtigten, das eigene Konto mit dem eines Schülers zu verknüpfen. Nach der Verknüpfung kann das Elternteil:</p>
+        <p>Tamyyaz ermöglicht es Eltern, ihr Konto mit dem Konto eines Schülers zu verknüpfen (über den Einladungscode des Schülers oder durch die Schule). Nach der Verknüpfung können die Eltern:</p>
         <ul>
-          <li>die Lernstatistiken des Schülers einsehen (Lernzeit, Fortschritt, Hausaufgaben).</li>
-          <li>die Funktion „Fokus-Sperre“ (Focus Lock) steuern, die die Nutzung anderer Apps während der Lernzeit einschränkt.</li>
+          <li>die Lernstatistiken des Schülers sehen (Lernzeit, Fortschritt, Aufgaben) und eine wöchentliche Zusammenfassung als Benachrichtigung erhalten — Lernzeit und aktive Tage und, bei Schülern einer Schule, Fehlzeiten, Verspätungen und den Durchschnitt der Noten der Woche;</li>
+          <li>die Schulakte des Schülers einsehen — Stundenplan, Anwesenheit und Noten —, wenn der Schüler zu einer Schule gehört;</li>
+          <li>eine Benachrichtigung erhalten, wenn die Schule den Schüler als abwesend oder verspätet einträgt oder eine Note hinzufügt;</li>
+          <li>eine Benachrichtigung erhalten, wenn der Schüler eine Fokus-Sitzung vorzeitig verlässt (nach der ersten Minute) — der Schüler wird davor gewarnt, bevor er geht;</li>
+          <li>die Funktion „Fokus-Sperre“ aus der Ferne steuern (sie begrenzt die Nutzung anderer Apps beim Lernen) — <strong>nur wenn der Schüler in seinen eigenen Einstellungen „Meinen Eltern erlauben, die Fokus-Sperre zu steuern“ einschaltet</strong>; der Schüler kann das jederzeit wieder ausschalten.</li>
         </ul>
-        <p>Diese Verknüpfung soll Eltern helfen, den schulischen Fortschritt ihres Kindes transparent zu verfolgen, und gibt dem Elternteil keinen Zugriff auf private Nachrichten oder das Passwort des Schülers.</p>
+        <p>Diese Verknüpfung soll Eltern helfen, den Lernfortschritt ihrer Kinder transparent zu verfolgen. Sie gibt Eltern nie Zugriff auf die privaten Gespräche des Schülers mit dem KI-Tutor (sie bleiben auf dem Gerät des Schülers), auf sein Passwort oder seinen genauen Standort.</p>
       </section>
 
       <section id="ai">
         <h2><span class="num">5.</span>KI-Funktionen (Gemini)</h2>
-        <p>Wenn du die KI-Funktionen der App nutzt — etwa eine Frage an den „intelligenten Tutor“ stellst, eine Übersetzung anforderst oder Übungsfragen generieren lässt —, wird der von dir eingegebene Text zur Verarbeitung an die <strong>Gemini-API</strong> von Google gesendet, damit eine passende Antwort erzeugt werden kann.</p>
-        <p>Das bedeutet, dass Google für diesen spezifischen Text (nur den Text, den du an diese Funktion sendest, nicht all deine Daten) als externer Auftragsverarbeiter fungiert. Für diese Verarbeitung gilt zusätzlich die <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>. Wir empfehlen, keine sensiblen persönlichen Informationen (wie Telefonnummer oder Adresse) in diesen Anfragen anzugeben.</p>
+        <p>Wenn du die KI-Funktionen der App nutzt — dem „smarten Tutor“ eine Frage stellen, eine Übersetzung anfordern, Übungsfragen erzeugen, aus deinen eigenen Noten einen Lernplan bauen oder eine fotografierte Heftseite in Lernkarten verwandeln —, wird der Text, den du schreibst (und ein Foto oder eine Datei, die du anhängst), über unseren Server an die <strong>Gemini API</strong> von Google gesendet, damit er verarbeitet und eine Antwort erzeugt werden kann. Fotos und Dateien dienen nur dazu, die Antwort zu erzeugen, und werden danach nicht von uns gespeichert.</p>
+        <p>Das bedeutet, dass Google als Drittanbieter genau diese Inhalte verarbeitet (nur das, was du an diese Funktion sendest, nicht alle deine Daten). Auf diese Verarbeitung findet auch die <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Google</a> Anwendung. Wir empfehlen, in diesen Anfragen keine sensiblen persönlichen Informationen (wie Telefonnummer oder Adresse) einzugeben.</p>
+        <p><strong>Sprache:</strong> Wenn du eine Frage sprichst, nutzt die App den Spracherkennungsdienst deines Geräts (von Android und Google), um deine Sprache in Text umzuwandeln — Tamyyaz erhält und speichert keine Aufnahmen. Das Vorlesen von Antworten nutzt die Sprachausgabe deines Geräts.</p>
       </section>
 
       <section id="storage">
         <h2><span class="num">6.</span>Wo deine Daten gespeichert werden</h2>
-        <p>Deine Daten (Konto, Dateien, Aktivitätsverlauf) werden auf einer Cloud-Infrastruktur folgender Anbieter gespeichert:</p>
+        <p>Deine Daten (Konto, Dateien, Aktivitätsprotokoll) werden auf der Cloud-Infrastruktur von folgenden Anbietern gespeichert:</p>
         <ul>
-          <li><strong>Google Firebase</strong> — für Authentifizierung, die Firestore-Datenbank und Dateispeicherung (Storage).</li>
-          <li><strong>Supabase</strong> (Edge Functions) — für bestimmte zusätzliche Cloud-Verarbeitungen und Funktionen.</li>
+          <li><strong>Google Firebase</strong> — Authentifizierung, Datenbank (Firestore), Absturzberichte (Crashlytics) und Push-Benachrichtigungen (Cloud Messaging).</li>
+          <li><strong>Supabase</strong> — die Cloud-Funktionen, die die Verarbeitung übernehmen, und der Speicher für Profilfotos.</li>
+          <li><strong>Dein eigenes Gerät</strong> — deine Noten, Fehler, Quizversuche, dein Lernplan, die Gespräche mit dem KI-Tutor, Teilen-Karten und Einstellungen bleiben im privaten Speicher der App auf deinem Handy; sie werden entfernt, wenn du die App deinstallierst oder ihre Daten löschst.</li>
         </ul>
-        <p>Beide Anbieter nutzen anerkannte Cloud-Rechenzentren und wenden branchenübliche Sicherheitsstandards an.</p>
+        <p>Beide Cloud-Anbieter nutzen bekannte Cloud-Rechenzentren und wenden branchenübliche Sicherheitsmaßnahmen an.</p>
       </section>
 
       <section id="minors">
@@ -128,13 +142,15 @@
           <li>Schülerkonten werden in den meisten Fällen über die Schule oder mit Kenntnis/Aufsicht eines Elternteils angelegt, nicht vollständig eigenständig.</li>
           <li>Wir haben die Eltern-Verknüpfungsfunktion (siehe Abschnitt 4) speziell dafür entwickelt, damit Eltern oder Erziehungsberechtigte die Nutzung der App durch ihr Kind begleiten und beaufsichtigen können.</li>
           <li>Wenn du Elternteil oder Lehrkraft bist und vermutest, dass Daten eines minderjährigen Nutzers unangemessen erhoben wurden, kontaktiere uns umgehend (Abschnitt 12); wir prüfen den Fall und löschen die Daten bei Bedarf.</li>
+          <li>Schulakten (Anwesenheit, Noten, Stundenplan) werden von der Schule des Schülers erfasst und sind nur für den Schüler, die verknüpften Eltern sowie die berechtigten Lehrkräfte und Administratoren der Schule sichtbar.</li>
+          <li>Die einzige Werbung ist ein freiwilliges Belohnungsvideo im Kristall-Shop, nur für Schüler, die sich selbst registriert haben (nie für Schüler einer Schule). Es wird als kindgerecht angefordert: keine personalisierte Werbung, nur familienfreundliche Inhalte.</li>
         </ul>
-      </section>
+            </section>
 
       <section id="sharing">
         <h2><span class="num">8.</span>Datenweitergabe — verkaufen wir Daten?</h2>
         <p><strong>Nein, niemals.</strong> Wir verkaufen Nutzerdaten an keinen Dritten und nutzen sie nicht für Werbung außerhalb der App.</p>
-        <p>Daten werden nur mit den technischen Dienstleistern geteilt, die für den Betrieb der App notwendig sind: Google Firebase, Supabase und die Google-Gemini-API (für die in Abschnitt 5 beschriebenen KI-Funktionen), und nur in dem für den jeweiligen Zweck erforderlichen Umfang.</p>
+        <p>Daten werden nur mit den technischen Dienstleistern geteilt, die für den Betrieb der App nötig sind: Google Firebase (Datenbank, Anmeldung, Absturzberichte, Benachrichtigungen), Supabase (Cloud-Funktionen und Fotospeicher), die Google Gemini API (für die KI-Funktionen aus Abschnitt 5) Google Play (Abrechnung), Google AdMob (die freiwillige belohnte Werbung) — und nur so weit, wie die jeweilige Funktion es erfordert. Inhalte aus der Bibliothek, die sich in der App öffnen (zum Beispiel YouTube-Videos, Wordwall-Spiele oder PDF-Dateien), stammen von Dritten und werden von deren Servern unter deren eigenen Datenschutzrichtlinien geladen; wir senden ihnen keine Kontodaten.</p>
       </section>
 
       <section id="security">
@@ -146,17 +162,19 @@
         <h2><span class="num">10.</span>Deine Rechte an deinen Daten</h2>
         <p>Du kannst jederzeit von uns verlangen:</p>
         <ul>
-          <li>Einsicht in die zu deinem Konto gespeicherten Daten.</li>
-          <li>Berichtigung oder Aktualisierung unrichtiger Angaben.</li>
-          <li>Löschung deines Kontos und aller zugehörigen Daten aus unseren Systemen.</li>
+          <li>Einsicht in die zu deinem Konto gespeicherten Daten;</li>
+          <li>die Berichtigung oder Aktualisierung unrichtiger Angaben;</li>
+          <li>die vollständige Löschung deines Kontos und deiner Daten aus unseren Systemen.</li>
         </ul>
-        <p><strong>Konto direkt in der App löschen:</strong> Schüler und Eltern können ihr eigenes Konto jederzeit direkt in der App löschen — öffne <strong>Einstellungen → Mein Konto löschen</strong> und bestätige. Dies erfolgt sofort und endgültig und löscht dein Konto sowie alle zugehörigen Daten vollständig aus unseren Systemen.</p>
-        <p>Für jede andere Anfrage (Einsicht, Berichtigung, oder wenn dein Kontotyp keine Selbstlöschung in der App unterstützt), kontaktiere uns über Abschnitt 12.</p>
+        <p><strong>Konto direkt in der App löschen:</strong> Schüler und Eltern können ihr eigenes Konto jederzeit in der App löschen: Öffne Einstellungen → Mein Konto löschen und bestätige. Das geschieht sofort und endgültig. Es löscht deine Anmeldung und dein Profil, dein Profilfoto, deinen Lernverlauf, die Schulakten über dich (Anwesenheit und Noten), deine Quizergebnisse, Problemmeldungen und Sitzungseinsätze, deine Einträge in Liga und Freundesliste sowie die Forums- und Unterrichtschat-Nachrichten, die du geschrieben hast. Was bestehen bleiben kann: ein Kaufbeleg (ein anonymes Kauf-Token), den wir zur Betrugsvermeidung und für die Buchhaltung aufbewahren müssen, sowie zusammengefasste Statistiken, die dich nicht identifizieren.</p>
+        <p><strong>Wie lange wir Daten speichern:</strong> solange das Konto besteht. Schulakten werden aufbewahrt, solange das Konto besteht, und mit ihm gelöscht, oder wenn die Schule aus dem Dienst entfernt wird. Bei Schülern, deren Konto von einer Schule angelegt wurde, können Anfragen zu Schulakten auch an die Schule gerichtet werden.</p>
+        <p>Für jede andere Anfrage (Auskunft, Berichtigung oder falls dein Kontotyp keine Selbstlöschung in der App unterstützt), kontaktiere uns über Abschnitt 12 unten.</p>
       </section>
 
       <section id="changes">
         <h2><span class="num">11.</span>Änderungen dieser Richtlinie</h2>
         <p>Wir können diese Richtlinie von Zeit zu Zeit aktualisieren, um Änderungen an den App-Funktionen oder neue rechtliche Anforderungen widerzuspiegeln. Das Datum „Zuletzt aktualisiert“ oben auf dieser Seite entspricht stets der zuletzt veröffentlichten Fassung. Bei wesentlichen Änderungen werden wir versuchen, dich über die App selbst zu informieren.</p>
+        <p><strong>Was sich am 3. November 2026 geändert hat:</strong> Wir haben Schulakten (Anwesenheit, Noten, Stundenplan) und die Hinweise für Eltern dazu ergänzt; die Wochenliga, Gruppen-Fokusräume und Sitzungseinsätze; das Lesen fotografierter Seiten durch die KI; Absturzberichte (Firebase Crashlytics); freiwillige Belohnungs-Werbevideos (Google AdMob) im Kristall-Shop für selbst registrierte Schüler; die Fern-Fokus-Sperre der Eltern erfordert jetzt die Erlaubnis des Schülers; und das Löschen eines Kontos entfernt jetzt auch deine Schulakten, dein Foto, deine Quizergebnisse, Problemmeldungen und Forenbeiträge.</p>
       </section>
 
       <section id="contact">

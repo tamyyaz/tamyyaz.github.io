@@ -43,7 +43,7 @@
   <main class="wrap">
     <article class="doc">
       <h1>Gizlilik Politikası</h1>
-      <p class="doc-updated">Son güncelleme: 2 Ekim 2026</p>
+      <p class="doc-updated">Son güncelleme: 3 Kasım 2026</p>
 
       <div class="doc-note">
         <p>Bu sayfa, <strong>Tamyyaz</strong> uygulamasının hangi verileri topladığını, bunları nasıl kullandığımızı ve kimlerin görebildiğini açıklar. Bu politika ayrıca <a href="privacy.html">Arapça</a>, <a href="privacy-en.html">İngilizce</a>, <a href="privacy-fr.html">Fransızca</a> ve <a href="privacy-de.html">Almanca</a> olarak da mevcuttur. Çeviriler arasında bir çelişki olması durumunda esas alınan sürüm <a href="privacy-en.html">İngilizce sürümdür</a>.</p>
@@ -77,47 +77,61 @@
         <h2><span class="num">2.</span>Topladığımız veriler</h2>
         <p>Uygulamayı ve özelliklerini çalıştırmak için aşağıdaki veri türlerini topluyoruz:</p>
         <ul>
-          <li><strong>Hesap bilgileri:</strong> adınız, bir e-posta adresi veya oturum açma kimliği (çoğu durumda gerçek bir kişisel e-posta yerine okul tarafından verilen bir kimlik) ve bir parola — parolalar Firebase Authentication aracılığıyla tamamen şifrelenir; bunları göremez veya düz metin olarak saklayamayız.</li>
-          <li><strong>Profil bilgileri:</strong> sınıf düzeyi, okul adı, sınıf/şube ve isteğe bağlı bir profil fotoğrafı (tamamen isteğe bağlı — fotoğraf eklemeden de uygulamayı kullanabilirsiniz).</li>
-          <li><strong>Yaklaşık konum (yalnızca öğrenciler):</strong> izninizle, kayıt sırasında cihazınızın GPS konumunu bir kez okuyup hemen bir ülke ve şehir bilgisine dönüştürüyoruz — asla tam koordinatlarınızı değil (bunları hiç saklamıyoruz) ve asla sürekli ya da takip edilen şekilde değil. Bu bilgiyi yalnızca öğrencilerimizin hangi ülkelerde olduğunu anlayıp onlara daha iyi destek sunmak ve içeriği bölgeye göre uyarlamak için kullanıyoruz. Bu izni reddedip hesabınızı normal şekilde, hiçbir etki olmadan oluşturabilirsiniz.</li>
-          <li><strong>Kullanım etkinliği ve akademik ilerleme:</strong> ders çalışma oturumlarının süresi ve zamanlaması, zayıf noktalarınızı takip etmenize yardımcı olacak soru, cevap ve hata geçmişi, uygulama içi "Kristal" bakiyeniz (gerçek parasal değeri olmayan dahili bir motivasyon birimi) ve kazandığınız rozetler/başarımlar.</li>
+          <li><strong>Hesap bilgileri:</strong> ad, bir e-posta veya kullanıcı adı (çoğu durumda okul üzerinden verilen bir tanımlayıcı, mutlaka gerçek kişisel e-postanız değil) ve bir şifre — şifre Google'ın Firebase Authentication hizmeti tarafından tamamen şifrelenir; onu asla göremeyiz ve düz metin olarak saklayamayız.</li>
+          <li><strong>Profil bilgileri:</strong> sınıf düzeyi, okul adı, sınıf/şube ve bir profil fotoğrafı (tamamen isteğe bağlı — uygulamayı fotoğrafsız da kullanabilirsin). Fotoğraf, bağlantıya sahip herkesin açabileceği bir web adresinde bulut depolamamızda tutulur ve diğer öğrencilere adının yanında gösterilebilir (örneğin forumlarda ve liglerde).</li>
+          <li><strong>Yaklaşık konum (yalnızca öğrenciler):</strong> iznin olursa kayıt sırasında cihazının konumunu GPS ile bir kez okur ve hemen bir ülke ve şehir adına çeviririz — kesin koordinatlarını saklamayız, sürekli veya takip amaçlı da değildir. Bunu yalnızca öğrencilerimizin genel olarak nereden geldiğini anlamak, onlara daha iyi hizmet etmek ve içeriği bölgelerine göre geliştirmek için kullanırız. Bu izni reddedip hesabını sorunsuzca oluşturabilirsin.</li>
+          <li><strong>Çalışma etkinliği ve ilerleme:</strong> çalışma oturumlarının süresi, başlangıç zamanı ve sonucu (tamamlandı veya erken bırakıldı), "kristal" bakiyen (uygulama içi, gerçek değeri olmayan bir motivasyon birimi), seviyen, serin, rozetlerin ve başarıların ve — bir oturuma kristal yatırırsan — yatırdığın miktar ve sonucu. Kendi notların, hataların, quiz denemelerin, çalışma planın ve yapay zekâ öğretmeniyle konuşmaların cihazında kalır ve yüklenmez (4. ve 5. bölümlerde anlatılan kısa özetler hariç).</li>
+          <li><strong>Okul kayıtları (yalnızca bir okulun öğrencileri):</strong> bir okul Tamyyaz'ı kullandığında öğretmenleri ve yöneticileri her öğrenci için şunları kaydedebilir: devam durumu (devamsız veya geç, tarih ve gecikme dakikasıyla), notlar (ders, sınav veya sözlü gibi tür, puan, tarih ve isteğe bağlı başlık) ve sınıfın ders programı. Bu kayıtları okul oluşturur, öğrenci değil.</li>
+          <li><strong>Mesajlar ve bildirimler:</strong> forumlarda, ders tartışmalarında ve grup odak odalarında yazdıkların ile uygulamadan gönderdiğin sorun bildirimleri (mesajın, uygulama sürümü ve cihaz modelinle birlikte).</li>
+          <li><strong>Bildirim ve cihaz tanımlayıcıları:</strong> hatırlatma, veliler için de rapor ve uyarı gönderebilmemiz için bir bildirim jetonu (Firebase Cloud Messaging) ve dilin. Ayrıca çökme raporları için kullanılan rastgele bir kurulum tanımlayıcısı saklarız.</li>
+          <li><strong>Çökme ve tanılama verileri:</strong> uygulama çökerse Firebase Crashlytics teknik ayrıntıları (cihaz modeli, Android sürümü, uygulama sürümü ve uygulamanın o an ne yaptığı) alır — adın veya içeriklerin olmadan.</li>
+          <li><strong>Ödüllü reklamlar (yalnızca kendi kendine kaydolan öğrenciler):</strong> kristal karşılığında bir video reklam izlemeyi seçersen, reklamı Google AdMob gösterir ve iletmek için cihazla ilgili teknik verileri (IP adresi gibi) işleyebilir; çocuklara yönelik, kişiselleştirilmemiş reklamlar isteriz. Günlük sınırı uygulamak için yalnızca bugün kaç reklamın ödülünü aldığını kaydederiz.</li>
+          <li><strong>Satın alımlar:</strong> ödemeler tamamen Google Play tarafından yürütülür. Kristallerini veya Premium'unu eklemek ve bir satın alımın iki kez kullanılmasını önlemek için yalnızca bir satın alma onayı (satın alma jetonu) alırız; kart bilgilerini asla görmeyiz. Bir satın alma kodu kullanırsan, hangi hesabın kullandığını kaydederiz.</li>
         </ul>
       </section>
 
       <section id="social">
         <h2><span class="num">3.</span>Sosyal özellikler ve tartışmalar</h2>
-        <p>Uygulama, diğer öğrencilerle bağlantı kurmanızı sağlayan sosyal özellikler içerir: bir arkadaş listesi, genel bir forum ve derse özel tartışma konuları. Lütfen şunu unutmayın:</p>
+        <p>Uygulamada diğer öğrencilerle iletişim kurmana yardım eden sosyal özellikler var: arkadaş listesi, herkese açık forumlar, ders tartışmaları, haftalık lig ve grup odak odaları. Lütfen dikkat et:</p>
         <ul>
-          <li>Genel forum gönderileri ve ders tartışması mesajları <strong>özel sohbetler değildir</strong> — yayınladığınız bölüme bağlı olarak kendi okulunuzdan/sınıfınızdan ya da daha geniş bir kitleden diğer öğrenciler tarafından okunabilir.</li>
-          <li>Bu alanlarda hassas kişisel bilgileri (telefon numarası, adres, aile bilgileri) paylaşmaktan kaçının.</li>
-          <li>Arkadaş listeniz, uygulamadaki gizlilik ayarlarına bağlı olarak arkadaşlarınızın bazı ders çalışmayla ilgili etkinliklerini veya istatistiklerini (örneğin çalışma süresi) görmenizi sağlayabilir.</li>
+          <li>Forum mesajları ve ders tartışmaları <strong>özel sohbetler değildir</strong> — yazdığın bölüme göre kendi okulundan/sınıfından veya genel olarak diğer öğrenciler tarafından okunur.</li>
+          <li>Bu bölümlerde hassas kişisel bilgileri (telefon numarası, adres, aile bilgileri) paylaşmaktan kaçın.</li>
+          <li>Arkadaş listesi, uygulamadaki gizlilik ayarlarına göre arkadaşlarının çalışmayla ilgili etkinliklerini veya istatistiklerini (çalışılan saat gibi) görmeni sağlar.</li>
+          <li><strong>Haftalık lig ve sıralamalar:</strong> lig grubundaki (en fazla 30) ve sıralama tablolarındaki diğer öğrenciler görünen adını, fotoğrafını ve o hafta çalıştığın dakikaları görebilir.</li>
+          <li><strong>Grup odak odaları:</strong> oda kodu olan kişiler adını ve odaklanıp odaklanmadığını, bitirip bitirmediğini veya ayrılıp ayrılmadığını görür.</li>
+          <li>Mesajlar yayınlanmadan önce otomatik bir kelime filtresinden geçer ve öğretmenler kendi dersinin sohbetini kilitleyebilir.</li>
         </ul>
       </section>
 
       <section id="parents">
         <h2><span class="num">4.</span>Veli hesabı ve gözetim</h2>
-        <p>Tamyyaz, bir veli veya vasinin kendi hesabını bir öğrenci hesabıyla ilişkilendirmesine olanak tanır. Bağlantı kurulduktan sonra veli şunları yapabilir:</p>
+        <p>Tamyyaz, bir velinin hesabını öğrencinin hesabına bağlamasına izin verir (öğrencinin davet kodu veya okul aracılığıyla). Bağlantı kurulduktan sonra veli şunları yapabilir:</p>
         <ul>
-          <li>Öğrencinin ders çalışma istatistiklerini görüntüleme (çalışma süresi, ilerleme, ödevler).</li>
-          <li>Çalışma saatlerinde diğer uygulamaların kullanımını kısıtlayan "Odaklanma Kilidi" (Focus Lock) özelliğini kontrol etme.</li>
+          <li>öğrencinin çalışma istatistiklerini (çalışma süresi, ilerleme, ödevler) görmek ve haftalık özet bildirimi almak — çalışma süresi ve aktif günler, okul öğrencileri için ayrıca devamsızlık, geç kalma ve haftanın not ortalaması;</li>
+          <li>öğrenci bir okula bağlıysa öğrencinin okul kayıtlarını — ders programı, devam durumu ve notlar — görmek;</li>
+          <li>okul öğrenciyi devamsız veya geç olarak kaydettiğinde ya da bir not eklediğinde bildirim almak;</li>
+          <li>öğrenci bir odak oturumunu erken bıraktığında (ilk dakikadan sonra) bildirim almak — öğrenci ayrılmadan önce bu konuda uyarılır;</li>
+          <li>"Odak Kilidi" özelliğini (öğrencinin çalışırken diğer uygulamaları kullanmasını sınırlar) uzaktan yönetmek — <strong>yalnızca öğrenci kendi ayarlarında "Ebeveynimin Odak Kilidi'ni yönetmesine izin ver" seçeneğini açarsa</strong>; öğrenci bunu istediği zaman kapatabilir.</li>
         </ul>
-        <p>Bu bağlantı, velilerin çocuklarının akademik ilerlemesini şeffaf biçimde takip edebilmesi için tasarlanmıştır ve veliye öğrencinin özel mesajlarına veya parolasına erişim sağlamaz.</p>
+        <p>Bu bağlantı, velilerin çocuklarının ilerlemesini şeffaf biçimde takip etmesine yardımcı olmak için tasarlanmıştır. Veliye, öğrencinin yapay zekâ öğretmeniyle yaptığı özel konuşmalara (bunlar öğrencinin cihazında kalır), şifresine veya kesin konumuna asla erişim vermez.</p>
       </section>
 
       <section id="ai">
         <h2><span class="num">5.</span>Yapay zekâ özellikleri (Gemini)</h2>
-        <p>Uygulamanın yapay zekâ özelliklerini kullandığınızda — örneğin "akıllı öğretmene" bir soru sorduğunuzda, çeviri istediğinizde veya alıştırma soruları oluşturduğunuzda — yazdığınız metin, uygun bir yanıt üretilmesi için Google'ın <strong>Gemini API</strong>'sine gönderilir.</p>
-        <p>Bu, Google'ın bu belirli metin için (yalnızca bu özelliğe gönderdiğiniz metin için, tüm verileriniz için değil) üçüncü taraf bir veri işleyici olarak hareket ettiği anlamına gelir. Bu işleme aynı zamanda <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google'ın Gizlilik Politikası</a>'na tabidir. Bu isteklerde telefon numarası veya adres gibi hassas kişisel bilgilerden kaçınmanızı öneririz.</p>
+        <p>Uygulamanın yapay zekâ özelliklerini kullandığında — "akıllı öğretmene" soru sormak, çeviri istemek, alıştırma soruları üretmek, kendi notlarından çalışma planı çıkarmak veya fotoğrafını çektiğin bir defter sayfasını tekrar kartlarına dönüştürmek — yazdığın metin (ve eklemeyi seçtiğin fotoğraf veya dosya) işlenip yanıt üretilebilmesi için sunucumuz üzerinden Google'ın <strong>Gemini API</strong> hizmetine gönderilir. Fotoğraflar ve dosyalar yalnızca yanıtı üretmek için kullanılır, sonrasında bizim tarafımızdan saklanmaz.</p>
+        <p>Bu, Google'ın yalnızca bu içeriği (o özelliğe gönderdiklerini, tüm verilerini değil) üçüncü taraf bir işleyici olarak işlemesi anlamına gelir. Bu işleme için <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google'ın gizlilik politikası</a> da geçerlidir. Bu isteklerde hassas kişisel bilgilerden (telefon numarası veya adres gibi) kaçınmanı öneririz.</p>
+        <p><strong>Ses:</strong> bir soruyu sesle söylediğinde, konuşmanı metne çevirmek için cihazının konuşma tanıma hizmeti (Android ve Google tarafından sağlanır) kullanılır — Tamyyaz kayıt almaz ve saklamaz. Yanıtların sesli okunması cihazındaki metin okuma motorunu kullanır.</p>
       </section>
 
       <section id="storage">
         <h2><span class="num">6.</span>Verilerin nerede saklandığı</h2>
-        <p>Verileriniz (hesap, dosyalar, etkinlik geçmişi) şu sağlayıcılara ait bulut altyapısında saklanır:</p>
+        <p>Verilerin (hesap, dosyalar, etkinlik kaydı) şu sağlayıcıların bulut altyapısında saklanır:</p>
         <ul>
-          <li><strong>Google Firebase</strong> — kimlik doğrulama, Firestore veritabanı ve dosya depolama (Storage) için.</li>
-          <li><strong>Supabase</strong> (Edge Functions) — belirli ek bulut işlemleri ve fonksiyonlar için.</li>
+          <li><strong>Google Firebase</strong> — kimlik doğrulama, veritabanı (Firestore), çökme raporları (Crashlytics) ve anlık bildirimler (Cloud Messaging).</li>
+          <li><strong>Supabase</strong> — işlemeyi yapan bulut fonksiyonları ve profil fotoğraflarının depolanması.</li>
+          <li><strong>Kendi cihazın</strong> — notların, hataların, quiz denemelerin, çalışma planın, yapay zekâ öğretmeniyle konuşmaların, paylaşım kartların ve ayarların telefonundaki uygulamanın özel depolama alanında kalır; uygulamayı kaldırdığında veya verilerini temizlediğinde silinir.</li>
         </ul>
-        <p>Her iki sağlayıcı da tanınmış bulut veri merkezlerini kullanır ve sektör standardı güvenlik uygulamalarını benimser.</p>
+        <p>Her iki bulut sağlayıcısı da bilinen bulut veri merkezlerini kullanır ve sektör standardı güvenlik önlemleri uygular.</p>
       </section>
 
       <section id="minors">
@@ -128,13 +142,15 @@
           <li>Öğrenci hesapları çoğu durumda okul aracılığıyla veya bir veli/vasinin bilgisi/gözetimi altında oluşturulur, tamamen bağımsız olarak değil.</li>
           <li>Veli hesabı bağlama özelliğini (bkz. bölüm 4) özellikle bir velinin veya vasinin çocuğunun uygulamayı kullanımını takip edip gözetebilmesi için tasarladık.</li>
           <li>Bir veli veya öğretmenseniz ve reşit olmayan birinin verilerinin uygunsuz şekilde toplandığını düşünüyorsanız, hemen bizimle iletişime geçin (aşağıdaki bölüm 12); durumu inceleyip gerekirse verileri sileriz.</li>
+          <li>Okul kayıtları (devam durumu, notlar, ders programı) öğrencinin okulu tarafından girilir ve yalnızca öğrenci, bağlı veli ile okulun yetkili öğretmenleri ve yöneticileri tarafından görülebilir.</li>
+          <li>Tek reklam, kristal mağazasındaki isteğe bağlı ödüllü video reklamdır ve yalnızca kendi kendine kaydolan öğrenciler için geçerlidir (okul öğrencileri için asla). Çocuklara yönelik olarak istenir: kişiselleştirilmiş reklam yok, yalnızca aile dostu içerik.</li>
         </ul>
-      </section>
+            </section>
 
       <section id="sharing">
         <h2><span class="num">8.</span>Veri paylaşımı — verileri satıyor muyuz?</h2>
         <p><strong>Hayır, asla.</strong> Kullanıcı verilerini hiçbir üçüncü tarafa satmıyoruz ve uygulama dışında reklam amacıyla kullanmıyoruz.</p>
-        <p>Veriler yalnızca uygulamanın çalışması için gerekli teknik hizmet sağlayıcılarla paylaşılır: Google Firebase, Supabase ve (bölüm 5'te açıklanan yapay zekâ özellikleri için) Google Gemini API — ve yalnızca her özelliğin işletilmesi için gereken ölçüde.</p>
+        <p>Veriler yalnızca uygulamayı çalıştırmak için gerekli teknik hizmet sağlayıcılarıyla paylaşılır: Google Firebase (veritabanı, giriş, çökme raporları, bildirimler), Supabase (bulut fonksiyonları ve fotoğraf depolama), Google Gemini API (5. bölümdeki yapay zekâ özellikleri için) Google Play (ödeme), Google AdMob (isteğe bağlı ödüllü reklamlar) — ve yalnızca her özelliğin gerektirdiği ölçüde. Kütüphaneden uygulama içinde açılan içerikler (örneğin YouTube videoları, Wordwall oyunları veya PDF dosyaları) üçüncü taraflarca sağlanır ve kendi gizlilik politikaları kapsamında kendi sunucularından yüklenir; onlara hesap verilerini göndermeyiz.</p>
       </section>
 
       <section id="security">
@@ -144,19 +160,21 @@
 
       <section id="rights">
         <h2><span class="num">10.</span>Verileriniz üzerindeki haklarınız</h2>
-        <p>Bizden her zaman şunları talep edebilirsiniz:</p>
+        <p>İstediğin zaman bizden şunları isteyebilirsin:</p>
         <ul>
-          <li>Hesabınızla ilgili saklanan verilere erişim.</li>
-          <li>Yanlış bilgilerin düzeltilmesi veya güncellenmesi.</li>
-          <li>Hesabınızın ve ilişkili tüm verilerin sistemlerimizden silinmesi.</li>
+          <li>hesabınla ilgili saklanan verileri görmeyi;</li>
+          <li>yanlış bilgileri düzeltmeyi veya güncellemeyi;</li>
+          <li>hesabını ve verilerini sistemlerimizden tamamen silmeyi.</li>
         </ul>
-        <p><strong>Hesabınızı doğrudan uygulamadan silme:</strong> öğrenciler ve veliler hesaplarını istedikleri zaman doğrudan uygulama içinden silebilir — <strong>Ayarlar → Hesabımı sil</strong> seçeneğini açın ve onaylayın. Bu işlem anında ve kalıcıdır; hesabınızı ve ilişkili tüm verilerinizi sistemlerimizden tamamen siler.</p>
-        <p>Diğer talepler için (erişim, düzeltme veya hesap türünüz uygulama içi kendi kendine silmeyi desteklemiyorsa), aşağıdaki bölüm 12 üzerinden bizimle iletişime geçin.</p>
+        <p><strong>Hesabı doğrudan uygulamadan silme:</strong> öğrenciler ve veliler kendi hesaplarını istedikleri zaman uygulamanın içinden silebilir: Ayarlar → Hesabımı sil'i aç ve onayla. Bu işlem anında ve kalıcıdır. Girişini ve profilini, profil fotoğrafını, çalışma geçmişini, hakkındaki okul kayıtlarını (devam durumu ve notlar), quiz sonuçlarını, sorun bildirimlerini ve oturum yatırımlarını, lig ve arkadaş listesi kayıtlarını ve yazdığın forum ile ders sohbeti mesajlarını siler. Kalabilecekler: sahtekârlığı önlemek ve muhasebe için saklamak zorunda olduğumuz bir satın alma kaydı (anonim bir satın alma jetonu) ve seni tanımlamayan birleştirilmiş istatistikler.</p>
+        <p><strong>Verileri ne kadar süre saklarız:</strong> hesap var olduğu sürece. Okul kayıtları hesap var olduğu sürece saklanır ve onunla birlikte silinir veya okul hizmetten çıkarıldığında silinir. Hesabı bir okul tarafından oluşturulmuş öğrenciler için okul kayıtlarına ilişkin talepler okula da iletilebilir.</p>
+        <p>Başka her talep için (erişim, düzeltme veya hesap türün uygulama içinde kendi kendine silmeyi desteklemiyorsa) aşağıdaki 12. bölüm üzerinden bizimle iletişime geç.</p>
       </section>
 
       <section id="changes">
         <h2><span class="num">11.</span>Bu politikadaki değişiklikler</h2>
         <p>Uygulamanın özelliklerindeki değişiklikleri veya yeni yasal gereklilikleri yansıtmak için bu politikayı zaman zaman güncelleyebiliriz. Bu sayfanın üstündeki "son güncelleme" tarihi her zaman en son yayınlanan sürümü yansıtır. Önemli bir değişiklik olması durumunda, sizi uygulama üzerinden bilgilendirmeye çalışacağız.</p>
+        <p><strong>3 Kasım 2026'da neler değişti:</strong> okul kayıtlarını (devam durumu, notlar, ders programı) ve velilere bunlarla ilgili giden uyarıları; haftalık ligi, grup odak odalarını ve oturum yatırımlarını; yapay zekânın fotoğraflanmış sayfaları okumasını; çökme raporlarını (Firebase Crashlytics) ekledik; kendi kendine kaydolan öğrenciler için kristal mağazasında isteğe bağlı ödüllü video reklamlar (Google AdMob); velinin uzaktan Odak Kilidi yönetimi artık öğrencinin iznini gerektiriyor; ve bir hesabı silmek artık okul kayıtlarını, fotoğrafını, quiz sonuçlarını, sorun bildirimlerini ve forum mesajlarını da siler.</p>
       </section>
 
       <section id="contact">
